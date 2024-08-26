@@ -10,7 +10,7 @@ fi
 
 # step2: Check the Git package is already installed
 dnf list installed git 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then 
     echo "Git has to be installed, please install Git"
    # step3: Check the Git package is sucessfully installed or not
