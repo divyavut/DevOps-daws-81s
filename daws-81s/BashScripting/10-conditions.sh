@@ -5,4 +5,4 @@ then
     echo "The $NUMBER is greater than the 10"
 else
     echo "The $Number is less than the 10"
-    
+fi
