@@ -30,6 +30,16 @@ yum is the package manager used to install, update, manage software packages for
 5.  sudo yum check-update ---> check which packages have available updates
 6.  sudo yum remove packagename ---> remove package
 
+### Install package using dnf(Advance package manger for yum)
+
+1.  sudo yum install packagename -y ---> install package with confirmation
+    2.sudo yum upgrade packagename ---> update only specific package
+2.  sudo yum upgrade -y ---> update all packages with latest version in the system
+3.  sudo yum list installed ---> list all installed packages
+4.  sudo yum list available ---> list all available packages from the configured repositories on your system.
+5.  sudo yum check-update ---> check which packages have available updates
+6.  sudo yum remove packagename ---> remove package
+
 ### /etc/yum.repos.d
 
 1.  /etc/yum.repos.d is a directory in a Linux system is where yum repository configuration files are stored. These files are essential for yum (or dnf in newer distributions) to locate and manage software repositories from which it can install and update packages.
