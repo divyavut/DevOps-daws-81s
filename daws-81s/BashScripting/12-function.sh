@@ -9,7 +9,7 @@ fi
 
 #Step2: Write a function to check the previous command execution status (exit status)
 VALIDATE(){
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then
         echo "$2 not installed yet"
         dnf install git -y
