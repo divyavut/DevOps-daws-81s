@@ -30,7 +30,7 @@ do
   if [ $? -ne 0 ]
   then
     echo "$package has to be installed, please install it"
-    dnf install git -y
+    dnf install $package -y
     #Step3: Verify the Package is sucessfully installed or not
     VERIFY_INSTALLATION $? "Installing $package"
   else
