@@ -13,6 +13,15 @@ then
     echo "User should have super user Previllages to run the script"
     exit 1
 fi
+
+VERIFY_INSTALLATION() {
+ if [ $1 -ne 0 ]
+ then 
+    echo "$2 is...$R FAILED $N"
+ else
+    echo "$2 is...$G SUCCESS $N"
+ fi
+} 
 #Step2: Check the Package is Already installed
 for package in $@
 do 
@@ -21,20 +30,12 @@ do
   then
     echo "$package has to be installed, please install it"
     dnf install git -y
+    #Step3: Verify the Package is sucessfully installed or not
     VERIFY_INSTALLATION $? "Installing $package"
   else
-    echo "$package is already installed , nothing to do"
+    echo "$package is already installed , nothing to do."
   fi
 done
 
-#Step3: Verify the PAckage is sucessfully installed or not
-VERIFY_INSTALLATION() {
- if [ $1 -ne 0 ]
- then 
-    echo "$2 is...$R FAILED $N"
- else
-    echo "$2 is...$G SUCCESS $N"
- fi
-}
 
 
