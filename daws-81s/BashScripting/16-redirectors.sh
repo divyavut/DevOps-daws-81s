@@ -30,6 +30,15 @@ VERIFY_INSTALLATION() {
     echo -e "$2 is...$G SUCCESS $N" &>>$LOG_FILE
  fi
 } 
+USAGE(){
+    echo -e "$R USAGE:: $N sudo 16-redirectors.sh package1 package2 ..."
+    exit 1
+}
+
+if [ $# -eq 0 ]
+then 
+    USAGE 
+fi
 #Step2: Check the Package is Already installed
 for package in $@ #($@ holds the argumnets like git, mysql-server, nginx)
 do 
@@ -41,6 +50,6 @@ do
     #Step3: Verify the Package is sucessfully installed or not
     VERIFY_INSTALLATION $? "Installing $package" 
   else
-    echo "$package is already $Y installed, nothing to do. $N" &>>$LOG_FILE
+    echo -e "$package is already $Y installed, nothing to do. $N" &>>$LOG_FILE
   fi
 done
