@@ -34,7 +34,7 @@ USAGE(){
     echo -e "$R USAGE:: $N sudo 16-redirectors.sh package1 package2 ..."
     exit 1
 }
-echo "Script Started execting at: $date"
+echo "Script Started execting at: $(date)"
 
 if [ $# -eq 0 ]
 then 
