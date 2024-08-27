@@ -34,6 +34,7 @@
            $? ---> Previous command state(exit status) (Hold the previous command execution state)
                    success - 0
                    Failure - 1 to 127
+           $0 ---> Script name
 
 #### Functions
 
