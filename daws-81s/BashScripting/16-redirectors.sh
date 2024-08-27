@@ -36,11 +36,11 @@ do
   dnf list installed $package
   if [ $? -ne 0 ]
   then
-    echo "$package has to be installed, please install it"
+    echo "$package has to be installed, please install it" &>>$LOG_FILE
     dnf install $package -y
     #Step3: Verify the Package is sucessfully installed or not
-    VERIFY_INSTALLATION $? "Installing $package"
+    VERIFY_INSTALLATION $? "Installing $package" 
   else
-    echo "$package is already installed , nothing to do."
+    echo "$package is already $Y installed, nothing to do. $N" &>>$LOG_FILE
   fi
 done
