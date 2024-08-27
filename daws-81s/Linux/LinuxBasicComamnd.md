@@ -31,9 +31,13 @@
 
      mv oldfilename newfilename
 
-#### create directory
+#### create directory, if directory exit though an error msg saying directory exits.
 
      mkdir directory
+
+#### create directory if not exit. If directory exit does not show any error.
+
+     mkdir -p directory
 
 #### remove empty directory
 

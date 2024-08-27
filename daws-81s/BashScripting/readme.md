@@ -25,7 +25,7 @@
 
 #### Special Variables
 
-           $@ ---> Pass all the variables to the script
+           $@ ---> refers to All arguments passed to it
            $# ---> Number of variables passed
            $HOME ---> HOME Directory of the Current User
            $PWD ---> Current working directory
@@ -57,3 +57,17 @@ Repeated task can be placed in the function. We have calling function, called fu
         Example: echo -e "\e[31m hello world"
 
 - -e for enabling the colors
+
+#### Loops
+
+       for i in {1..10}
+       do
+       echo "print $i"
+       done
+
+#### Redirectors
+
+- 1>, > ---> redirects the standard output of a command to a file.
+- 2> ---> for redirecting the standard error of a command to a file.
+- &> ---> for redirecting Both standard error and standard output to a file
+- > > --> appending output of a command to a file.

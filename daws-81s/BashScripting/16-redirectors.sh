@@ -1,26 +1,33 @@
-#!/bin/bash
+#!bin/bash
 
-# Color Codes
+#create a log folder in /var/log
+LOG_FOLDER=/var/log/shell-script/
+SCRIPT_NM=$(echo $0 | cut -d "." -f1)
+TIMESTAMP=$(date date +%Y-%m-%d-%H-%M-%S)
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NM-TIMESTAMP.log"
+mkdir -p $LOG_FOLDER
+
+#Color Codes
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-#Step1 : Check User have Super User previllages to run the script
+# Step1 : Check User have Super User previllages to run the script
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
-    echo "User should have super user Previllages to run the script"
+    echo -e "$R User should have super user Previllages to run the script $N" &>>$LOG_FILE
     exit 1
 fi
 
 VERIFY_INSTALLATION() {
  if [ $1 -ne 0 ]
  then 
-    echo -e "$2 is...$R FAILED $N"
+    echo -e "$2 is...$R FAILED $N" &>>$LOG_FILE
     exit 1
  else
-    echo -e "$2 is...$G SUCCESS $N"
+    echo -e "$2 is...$G SUCCESS $N" &>>$LOG_FILE
  fi
 } 
 #Step2: Check the Package is Already installed
@@ -37,6 +44,3 @@ do
     echo "$package is already installed , nothing to do."
   fi
 done
-
-
-
