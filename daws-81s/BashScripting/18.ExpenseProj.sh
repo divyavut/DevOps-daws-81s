@@ -38,7 +38,7 @@ then
 fi
 }
 #Step 2: check user passed the arguments to the script at runtime
-if [ $# -ne 0 ]# $# refers number to the number of argument passed to the script
+if [ $# -ne 0 ] # $# refers number to the number of argument passed to the script
 then 
     USAGE
 fi
