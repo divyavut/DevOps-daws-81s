@@ -22,10 +22,10 @@ fi
 VALIDATE(){
 if [ $1 -ne 0 ]
 then
-    echo -e "$2.. $R is failed $N" | tee -a $LOG_FILE
+    echo -e "$2.. $R failed $N" | tee -a $LOG_FILE
     exit 1
 else
-    echo -e "$2.. $G is sucessfull $N" | tee -a $LOG_FILE
+    echo -e "$2.. $G sucessfull $N" | tee -a $LOG_FILE
 fi
 }
 echo "Script started executing at : $(date)" | tee -a $LOG_FILE
@@ -40,7 +40,7 @@ VALIDATE $? "Mysql-server is enabled"
 
 # Step4: check mysql-server disabled"
 systemctl start mysqld &>>$LOG_FILE
-VALIDATE $? "mysql-server is started"
+VALIDATE $? "Mysql-server is started"
 
 # Step5: check password is set for mysql-server"
 mysql -h mysql.dev.divyavutakanti.com -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
