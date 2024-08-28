@@ -25,7 +25,7 @@ then
     echo -e "$2.. $R is failed $N" | tee -a $LOG_FILE
     exit 1
 else
-    echo -e "$2.. $G is sucessfull %N" | tee -a $LOG_FILE
+    echo -e "$2.. $G is sucessfull $N" | tee -a $LOG_FILE
 fi
 }
 echo "Script started executing at : $(date)" | tee -a $LOG_FILE
@@ -46,8 +46,9 @@ VALIDATE $? "mysql-server is started"
 mysql -h mysql.dev.divyavutakanti.com -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo -e "$Y Mysql-server password is not set yet, please set the password $N" | tee -a $LOG_FILE
+    echo -e "Mysql-server password is not set yet, $Y Setting the password now $N" | tee -a $LOG_FILE
     mysql_secure_installation --set-root-pass ExpenseApp@1
+    echo -e "Mysql-server password is $G succesfully set $N"
 else
     echo -e "$Y Mysql-server password ia already set, Skipping it $N" | tee -a $LOG_FILE
 fi
