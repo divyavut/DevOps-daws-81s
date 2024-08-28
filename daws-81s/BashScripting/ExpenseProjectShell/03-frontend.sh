@@ -49,7 +49,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>$LOG_FILE
 VALIDATE $? "Unzipping the code" 
 
-cp /home/ec2-user/DevOps-daws-81s/daws-81s/BashScripting/ExpenseProjectShell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE
+cp /root/DevOps-daws-81s/daws-81s/BashScripting/ExpenseProjectShell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE
 VALIDATE $? "Copied the content to Nginx configuration file"
 
 systemctl restart nginx &>>$LOG_FILE
