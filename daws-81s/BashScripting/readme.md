@@ -137,3 +137,19 @@ trap command catch the error through ERR and send to the specified Signal
         trap 'failure "$LINENO" "$BASH_COMMAND"' ERR
 
 #### while loop
+
+reading the output, reading the files
+FILES= /var/log/nginx/access.log
+
+        while(condition)
+        do
+
+
+        done <<< FILES
+
+
+        while IFS read -r line
+        do
+        echo "$line"
+
+        done <<< FILES
