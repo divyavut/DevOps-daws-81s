@@ -65,7 +65,7 @@ VALIDATE $? "Unzipping code"
 npm install &>>$LOG_FILE
 VALIDATE $? "installing npm" 
 
-cp /home/ec2-user/DevOps-daws-81s/daws-81s/BashScripting/ExpenseProjectShell/expense.conf /etc/systemd/system/expense.conf &>>$LOG_FILE
+cp /home/ec2-user/DevOps-daws-81s/daws-81s/BashScripting/ExpenseProjectShell/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE
 VALIDATE $? "Coping Backend Service to Systemd" 
 
 
