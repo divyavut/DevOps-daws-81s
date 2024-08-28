@@ -24,10 +24,10 @@ echo -e "$Y Script started executing at: $(date)$N" | tee -a $LOG_FILE
 VALIDATE() {
 if [ $1 -ne 0 ]
 then
-     echo -e "$R $2.. is failed $N" | tee -a $LOG_FILE
+     echo -e "$2..$R failed $N" | tee -a $LOG_FILE
      exit 1
 else
-     echo -e "$G $2.. is success $N" | tee -a $LOG_FILE
+     echo -e "$2..$G  success $N" | tee -a $LOG_FILE
 fi
 }
 
@@ -66,7 +66,7 @@ VALIDATE $? "Unzipping code"
 npm install &>>$LOG_FILE
 VALIDATE $? "installing npm" 
 
-cp ./backend.service /ect/systemd/system/backend.service &>>$LOG_FILE
+cp /home/ec2-user/DevOps-daws-81s/daws-81s/BashScripting/ExpenseProjectShell/backend.service /ect/systemd/system/backend.service &>>$LOG_FILE
 VALIDATE $? "Coping Backend Service to Systemd" 
 
 
