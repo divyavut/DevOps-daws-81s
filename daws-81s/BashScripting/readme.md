@@ -117,10 +117,23 @@ If you get 404 error --> its means cilent is unable to connect to backend.
 
 #### set -e
 
-Automatically find the error and exit.
+setting the Automatic exit, if we get the error.
 
 #### set -ex
 
-debug mode
+set in debug mode
+
+#### trap ' ' ERR
+
+ERR ---> is the Error signal.
+trap command catch the error through ERR and send to the specified Signal
+
+##### Example:
+
+         failure(){
+                echo "failed at: $1, $2"
+         }
+
+        trap 'failure "$LINENO" "$BASH_COMMAND"' ERR
 
 #### while loop
