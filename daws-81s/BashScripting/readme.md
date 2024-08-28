@@ -84,21 +84,36 @@ if you run the script infinite times, it would give same results.
 
 CRUD
 
-- POST method ---> Create data
-- GET method ---> Read data
+- POST method ---> Create data, you should send data. Usually it goes as json.
+- GET method ---> Read the data from database(api read the data from database)
 - DELETE Method ---> delete data
 - PUT method ---> update data
 
-#### HTTP status codes
+#### HTTP status response codes
 
+- 2 --->
 - 4 \*\* ---> client side errors
 - 5 \*\* ---> Server side errors
-- 401 ---> BAD Request
-- 402 ---> unauthorised (user require authentication)
-- 403 ---> Forbidden (user dont have resource authorisation)
-- 404 --> not found
 
--5
+#### Client Side Error (4\*\*)
+
+- 401 ---> BAD Request
+- 402 ---> unauthorised (user require authentication(permission))
+- 403 ---> Forbidden (user has autentication but dont have resource authorisation)
+- 404 ---> Not found(server says unable to understand the request url send by cleint)
+- 405 ---> Method not found
+
+#### who is client for backend --> Frontend
+
+If you get 404 error --> its means cilent is unable to connect to backend.
+
+#### Server side Error (5\*\*)
+
+500- internal server error
+502- Bad Gateway
+503- Service Unavailable
+
+-
 
 #### set -e
 
