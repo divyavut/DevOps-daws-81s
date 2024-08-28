@@ -11,10 +11,10 @@ SCRIPT_NM=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="/$LOG_FOLDER/$SCRIPT_NM-TIMESTAMP.log"
 
-#Create Directory if not exit
+#Create Directory if not exit, if exits doesn't through error
 mkdir -p /var/log/expense
 
-# validate function
+# validate functionget
 VALIDATE(){
   if [ $1 -ne 0 ]
   then

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shell script automitically enables these special variables
 echo "All variables passed to the script: $@"
 echo "Number of varaibles passed: $#"
 echo "Current working directory: $PWD"

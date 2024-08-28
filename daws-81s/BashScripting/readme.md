@@ -71,3 +71,41 @@ Repeated task can be placed in the function. We have calling function, called fu
 - 2> ---> for redirecting the standard error of a command to a file.
 - &> ---> for redirecting Both standard error and standard output to a file
 - > > --> appending output of a command to a file.
+
+#### tee
+
+tee -a --> write the standard input to the terminal and standard output to the file.
+
+#### Idempotentcy
+
+if you run the script infinite times, it would give same results.
+
+#### HTTP methods and HHTPS methods
+
+CRUD
+
+- POST method ---> Create data
+- GET method ---> Read data
+- DELETE Method ---> delete data
+- PUT method ---> update data
+
+#### HTTP status codes
+
+- 4 \*\* ---> client side errors
+- 5 \*\* ---> Server side errors
+- 401 ---> BAD Request
+- 402 ---> unauthorised (user require authentication)
+- 403 ---> Forbidden (user dont have resource authorisation)
+- 404 --> not found
+
+-5
+
+#### set -e
+
+Automatically find the error and exit.
+
+#### set -ex
+
+debug mode
+
+#### while loop
