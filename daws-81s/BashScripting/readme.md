@@ -148,8 +148,12 @@ FILES= /var/log/nginx/access.log
         done <<< FILES
 
 
-        while IFS read -r line
+        while IFS read -r file
         do
-        echo "$line"
+        echo "$file"
 
         done <<< FILES
+
+#### Crontab
+
+To schedule the script periodically

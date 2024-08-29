@@ -12,10 +12,10 @@ else
     exit 1
 FILES=$(find $SOURCE_DIR -name "*.log"  -mtime +14) 
 echo "Files:$FILES"
-while IFS read -r line
+while IFS read -r file
 do
 
-echo "Deleting $line"
-rm -rf $line
+echo "Deleting $file"
+rm -rf $file
 
 done <<< $FILES
