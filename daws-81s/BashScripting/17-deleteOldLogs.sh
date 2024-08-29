@@ -12,7 +12,7 @@ then
     exit 1
 fi 
 
-SOURCE_DIR="/root/application_logs"
+SOURCE_DIR="/home/ec2-user/logs"
 if [ ! -d $SOURCE_DIR ]
 then
     echo -e "$SOURCE_DIR $R directory doesn't exist $N"

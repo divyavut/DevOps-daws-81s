@@ -71,6 +71,9 @@ Repeated task can be placed in the function. We have calling function, called fu
 - 2> ---> for redirecting the standard error of a command to a file.
 - &> ---> for redirecting Both standard error and standard output to a file
 - > > --> appending output of a command to a file.
+- < ---> redirect input
+- > ---> redirect output
+- <<< --> redirect single input string
 
 #### tee
 
