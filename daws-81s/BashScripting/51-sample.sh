@@ -24,12 +24,12 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 # Check if any files are found
-if [ ! -z $FILES ]
+if [ -z $FILES ];
 then
-    echo -e "$G Files are: $N $FILES"  
-else
     echo -e  "$FILES $R doesn't exist $N"
-    exit 1
+    exit 1   
+else
+    echo -e "$G Files are: $N $FILES"    
 fi
 
 while IFS= read -r file
