@@ -24,7 +24,7 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 # Check if any files are found
-if [ -z $FILES ];
+if [ -z "$FILES" ];
 then
     echo -e  "$FILES $R doesn't exist $N"
     exit 1   
