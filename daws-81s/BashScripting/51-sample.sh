@@ -1,6 +1,6 @@
 #!/bin/bash
 # step1: Check user has super user privillage to run the script
-USERID=(id -u)
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -23,12 +23,13 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
-if [ ! -f $FILES ]
+# Check if any files are found
+if [ ! -z $FILES ]
 then
-    echo -e "$FILES $R doesn't exist $N"
-    exit 1
+    echo -e "$G Files are: $N $FILES"  
 else
-    echo -e "$G Files are: $N $FILES"
+    echo -e  "$FILES $R doesn't exist $N"
+    exit 1
 fi
 
 while IFS= read -r file
