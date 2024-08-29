@@ -1,16 +1,16 @@
 #!/bin/bash
 # step1: Check user has super user privillage to run the script
-USERID=$(id -u)
+# USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ $USERID -ne 0 ]
-then 
-    echo -e "$R User should have root privelliages $N"
-    exit 1
-fi 
+# if [ $USERID -ne 0 ]
+# then 
+#     echo -e "$R User should have root privelliages $N"
+#     exit 1
+# fi 
 
 SOURCE_DIR="/home/ec2-user/logs"
 if [ ! -d $SOURCE_DIR ]
