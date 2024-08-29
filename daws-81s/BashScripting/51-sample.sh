@@ -32,9 +32,9 @@ else
     echo -e "$G Files are: $N $FILES"    
 fi
 
-while IFS= read -r file
+echo "$FILES" | while IFS= read -r file
 do
     echo -e "$Y Deleting the file: $N $file"
     rm -f $file
     echo -e "$Y $file deleted $N"
-done <<<  "$FILES"
+done 
