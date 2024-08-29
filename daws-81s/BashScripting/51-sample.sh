@@ -21,7 +21,7 @@ else
     echo -e "$SOURCE_DIR $G directory exist $N"
 fi
 
-$FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 if [ ! -f $FILES ]
 then
