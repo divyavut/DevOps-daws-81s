@@ -165,3 +165,17 @@ To schedule the script periodically
 
 /var/log/accesslogs
 /var/log/errorlogs
+
+#### Make script as Native Command
+
+##### make 19-backup.sh script executable
+
+         chmod +x 19-backup.sh
+
+##### Move script to /bin directory where all commands are there( cp, mv ....)
+
+       sudo cp 19-backup.sh /bin/backup
+
+##### now we can use backup as command
+
+            backup

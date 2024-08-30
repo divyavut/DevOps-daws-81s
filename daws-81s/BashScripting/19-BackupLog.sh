@@ -20,12 +20,13 @@ USAGE(){
     echo -e "$R USAGE:: $N sh backuoLog.sh <source> <destination> <day(optional)>"
 }
 
+# Check number of argumnets passed
 if [ $# -lt 2 ]
 then
     USAGE 
     exit 1
 fi
-
+# check the directory exist 
 if [ ! -d $SOURCE_DIR ]
 then
     echo -e "source directory does't exist: $R $SOURCE_DIR $N"
@@ -33,7 +34,7 @@ then
 else
     echo -e "Directory exist: $SOURCE_DIR"
 fi
-
+# check the files exist 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 if [ ! -z "$FILES" ]
