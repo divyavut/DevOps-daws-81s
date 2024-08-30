@@ -39,8 +39,6 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 if [ ! -z "$FILES" ]
 then 
     echo -e "$G Files are found $N"
-    echo "sudo dnf install zip -y"
-    echo -e "Sucessfully installed the  $G zip  $N package"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
