@@ -28,19 +28,19 @@ fi
 
 if [ ! -d $SOURCE_DIR ]
 then
-    echo -e "source directory does't exit: $R $SOURCE_DIR $N"
+    echo -e "source directory does't exist: $R $SOURCE_DIR $N"
     exit 1
+else
+    echo -e "Directory exist: $SOURCE_DIR"
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
-if [ -z "$FILES" ]
+if [! -z "$FILES" ]
 then 
-    echo -e " $R Files doesn't exit $N"
-    exit 1
-else
     echo -e "$G Files are found $N"
-    sudo dnf install zip -y
+    echo "sudo dnf install zip -y"
+    echo -e "Sucessfully installed the  $G zip  $N package"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
@@ -57,6 +57,11 @@ else
         echo -e "Zipping files is $R failed $N"
         exit 1
     fi
+    
+else
+    echo -e " $R Files doesn't exit $N"
+    exit 1
+   
 fi
 
 
