@@ -40,7 +40,7 @@ then
     exit 1
 else
     echo -e "$G Files are found $N"
-    dnf install zip -y
+    sudo dnf install zip -y
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
