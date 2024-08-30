@@ -36,7 +36,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
-if [! -z "$FILES" ]
+if [ ! -z "$FILES" ]
 then 
     echo -e "$G Files are found $N"
     echo "sudo dnf install zip -y"

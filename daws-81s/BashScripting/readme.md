@@ -157,6 +157,11 @@ FILES= /var/log/nginx/access.log
 
         done <<< FILES
 
-#### Crontab
+#### Crontab -e
 
 To schedule the script periodically
+
+#### Nginx error logs and acess logs
+
+/var/log/accesslogs
+/var/log/errorlogs
