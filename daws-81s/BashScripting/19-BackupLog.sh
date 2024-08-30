@@ -17,7 +17,7 @@ TIMESTAMP=$(date +%Y-m%-%d-%H-%M-%S)
 DAYS=${3:-14} # IF $3 is empty,default is 14 days
 
 USAGE(){
-    echo -e "$R $USAGE:: sh backuoLog.sh <source> <destination> <day(optional)> $N"
+    echo -e "$R USAGE:: $N sh backuoLog.sh <source> <destination> <day(optional)>"
 }
 
 if [ $# -lt 2 ]
