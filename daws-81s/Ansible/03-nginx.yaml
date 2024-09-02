@@ -6,4 +6,4 @@
     ansible.builtin.package:
       name: nginx
       state: present 
-      enabled: yes
+     
