@@ -1,0 +1,19 @@
+{
+    "name": "divya",
+    "email": "divyareddya1208@gmail.com",
+    "addresses":
+        [
+            {
+                "type": "perm",
+                "address": "tuggali",
+                "pincode": "518390"
+
+             },
+             {
+                "type": "temp",
+                "address": "hyd",
+                "pincode": "518390"
+             }
+
+        ]
+}

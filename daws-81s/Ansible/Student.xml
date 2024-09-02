@@ -1,0 +1,36 @@
+<Students>
+<Student>
+    <Name>Divya</Name>
+    <Surname>vutakanti</Surname>
+    <Email>divyareddya1208@gmail.com</Email>
+    <Addresses>
+    <TemAdress>
+        <HouseNo>5/37A</HouseNo>
+        <City>Tuggali</City>
+        <Pincode>518390</Pincode>
+    </TemAdress>
+    <PreAddress>
+        <HouseNo>5/37 A</HouseNo>
+        <City>Tuggali </City>
+        <Pincode>518390</Pincode>
+    </PreAddress>
+    </Addresses>
+</Student>
+<Student>
+    <Name>Divya</Name>
+    <Surname>Reddy</Surname>
+    <Email>divyavutakanti13@gmail.com</Email>
+    <Addresses>
+    <TemAdress>
+        <HouseNo>5/38 A</HouseNo>
+        <City>Tuggali</City>
+        <pincode>518390</pincode>
+    </TemAdress>
+    <PreAddress>
+        <HouseNo>7/38  A</HouseNo>
+        <City>Tuggali</City>
+        <pincode>518390</pincode>
+    </PreAddress>
+    </Addresses>
+</Student>
+</Students>

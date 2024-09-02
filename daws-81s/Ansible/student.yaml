@@ -1,0 +1,21 @@
+#YAML works on indentation, means space
+- Name: divyavutakanti
+  Email: divyareddya1208@gmail.com
+  Addresses:
+  - type: permanent  
+    address: Tuggali
+    pincode: 518390
+  - type: temporary
+    address: pathikonda
+    pincode: 518390
+- Name: divyareddy
+  Email: divyavutakanti13@gmail.com
+  Addresses:
+  - type: permanent  
+    address: Tuggali
+    pincode: 518390
+  - type: temporary
+    address: pathikonda
+    pincode: 518390
+  
+
