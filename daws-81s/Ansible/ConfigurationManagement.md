@@ -54,3 +54,16 @@
 - conditions
 - functions
 - loop
+
+#### Variables (Inheritence concepts)
+
+- Playlevel varaibles
+- Task level varaibles
+- command line variaables
+- Promt variables (read input from user)
+- inventory variables
+- roles
+
+#### Variables priority
+
+-
