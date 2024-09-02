@@ -46,3 +46,11 @@
 - Ansible can connect to any other external system(azure,aws,....) and perform task.
 - here we can call modules to perform tasks. every ansible module we can check in the documentation
 - module name is manditory, you can supply argumnets to the module , they may be optional or manditory
+
+##### Ansible
+
+- varaibles
+- datatypes
+- conditions
+- functions
+- loop
