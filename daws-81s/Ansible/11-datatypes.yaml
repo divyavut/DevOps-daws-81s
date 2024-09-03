@@ -1,0 +1,7 @@
+- name: datatypes 
+  hosts: web 
+  vars:
+    name: 
+  tasks:
+  - name: print datatypes 
+    ansible.builtin.debug: 
