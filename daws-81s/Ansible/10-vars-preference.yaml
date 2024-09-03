@@ -1,0 +1,17 @@
+- name: variables precedence 
+  hosts: web 
+  vars:
+    COURSE: DevOps from task level
+  vars_files:
+  - name: vars.yaml
+  vars_prompt:
+  - name: COURSE 
+    prompt: Please enter the course name
+  tasks:
+  - name: print variables depends on precedence 
+    vars: 
+      COURSE: DevOps from task level 
+    ansible.builtin.debug:  
+      msg: "Hi, Iam learning {{COURSE}}" 
+
+  
