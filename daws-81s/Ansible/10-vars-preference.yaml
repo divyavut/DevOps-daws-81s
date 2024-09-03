@@ -3,7 +3,7 @@
   vars:
     COURSE: DevOps from task level
   vars_files:
-  - name: vars.yaml
+  - vars.yaml
   vars_prompt:
   - name: COURSE 
     prompt: Please enter the course name
