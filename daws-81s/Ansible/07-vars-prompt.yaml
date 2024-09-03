@@ -3,12 +3,14 @@
   vars_prompt: 
   - name: COURSE 
     prompt: please enter the course name 
+    private: false # user inputs from commaind prompt are not confidentials
   - name: DURATION 
     prompt: please enter the duration 
+    private: false
   - name: TRAINER 
     prompt: please enter the trainer name 
+    private: false
   tasks:
   - name: print the course detials 
     ansible.builtin.debug: 
       msg: "Hi, I am learning {{COURSE}}, Duration is: {{DURATION}}, trainer is : {{TRAINER}}"
-      
