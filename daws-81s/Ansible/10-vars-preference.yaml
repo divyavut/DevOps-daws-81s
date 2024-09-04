@@ -1,7 +1,7 @@
 - name: variables precedence 
   hosts: web 
   vars:
-    COURSE: DevOps from task level
+    COURSE: DevOps from play level
   vars_files:
   - vars.yaml
   vars_prompt:
