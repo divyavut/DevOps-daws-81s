@@ -7,6 +7,7 @@
   vars_prompt:
   - name: COURSE 
     prompt: Please enter the course name
+    private: false
   tasks:
   - name: print variables depends on precedence 
     vars: 
