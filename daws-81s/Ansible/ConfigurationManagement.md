@@ -60,10 +60,22 @@
 - Playlevel varaibles
 - Task level varaibles
 - command line variaables
+- vars_file variables
 - Promt variables (read input from user)
 - inventory variables
 - roles
 
 #### Variables priority
 
--
+- command line arguments
+- Task level
+- vars_files
+- vars_prompt
+- play level
+- inventory
+
+#### ansible Inventory groups
+
+- ungrouped servers
+- grouped servers
+- groupofgroups
