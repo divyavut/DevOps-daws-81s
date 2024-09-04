@@ -4,10 +4,10 @@
     COURSE: DevOps from play level
   # vars_files:
   # - vars.yaml
-  vars_prompt:
-  - name: COURSE 
-    prompt: Please enter the course name
-    private: false
+  # vars_prompt:
+  # - name: COURSE 
+  #   prompt: Please enter the course name
+  #   private: false
   tasks:
   - name: print variables depends on precedence 
     # vars: 
