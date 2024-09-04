@@ -6,7 +6,7 @@
   #   prompt: please enter the number 
   #   private: false
   vars:
-   firstname: "divya"
+   my_number: 5
   tasks: 
   - name: print given number if less than 10
     ansible.builtin.debug:
