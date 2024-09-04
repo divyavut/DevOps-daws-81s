@@ -79,3 +79,16 @@
 - ungrouped servers
 - grouped servers
 - groupofgroups
+
+#### datatype
+
+- string
+- number
+- boolean
+- list
+- map/dictionary
+
+#### conditions
+
+- when
+  to decide whether the module should run or not
