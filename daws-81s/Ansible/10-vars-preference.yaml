@@ -2,8 +2,8 @@
   hosts: web 
   vars:
     COURSE: DevOps from play level
-  vars_files:
-  - vars.yaml
+  # vars_files:
+  # - vars.yaml
   vars_prompt:
   - name: COURSE 
     prompt: Please enter the course name
