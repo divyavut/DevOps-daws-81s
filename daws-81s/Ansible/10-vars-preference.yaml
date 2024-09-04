@@ -10,8 +10,8 @@
     private: false
   tasks:
   - name: print variables depends on precedence 
-    vars: 
-      COURSE: DevOps from task level 
+    # vars: 
+    #   COURSE: DevOps from task level 
     ansible.builtin.debug:  
       msg: "Hi, Iam learning {{COURSE}}" 
 
