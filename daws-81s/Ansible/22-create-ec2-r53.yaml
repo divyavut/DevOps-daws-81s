@@ -9,7 +9,7 @@
     - mysql
     - backend
     - frontend
-    zone: divyavutakanti.com
+    zone: dev.divyavutakanti.com
   tasks: 
   - name: Install the python packages
     ansible.builtin.pip:
