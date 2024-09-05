@@ -121,3 +121,8 @@ Ansible, before connecting to the servers/host it will collect entire informatio
 #### functions == filter
 
 - manipulations(data manipulations, file manipulations)
+
+#### command vs shell
+
+- (ansible.built.in.command)command --> simple command, it will not get shell environment
+- (ansible.built.in.shell)shell --> complex commands pipes, redirections, it will get shell environment
