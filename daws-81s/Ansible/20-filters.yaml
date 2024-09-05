@@ -21,3 +21,26 @@
       numbers: [1,2,3,4,5,4,3]
     ansible.builtin.debug:
       msg: "{{numbers | unique}}"
+
+  - name: convert map to list
+    vars: 
+      course:
+        name: "Devops with Aws"
+        duration: 120
+        trainer: "sivakumar"
+    ansible.builtin.debug:
+      msg: "{{course | dict2item}}"
+
+  - name: convert list  to map
+    vars: 
+      course:
+        name: "Devops with Aws"
+        duration: 120
+        trainer: "sivakumar"
+    ansible.builtin.debug:
+      msg: "{{course | item2dict}}"
+  - name: check the ip address 
+    vars: 
+      ip : 54.204.84.161
+    ansible.builtin.debug: 
+      msg: "{{ip | anisble.utils.ipv4 }}"
