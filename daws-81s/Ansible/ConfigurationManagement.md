@@ -90,13 +90,26 @@
 
 #### conditions
 
-- when
+- when: condition_expression
   to decide whether the module should run or not
 
-#### ansible.built.command
+#### ansible.builtin.command
 
-- ansible cant garuntee the module for everything
+- ansible can't garuntee the module for everything
 
 #### Error Handling ---> handling error
 
 - ignore_errors -> we know the erro just ignore it we will handle in next steps
+
+#### storing output varaibles in ansible playbook
+
+- register: variablename
+
+#### Ansible modules
+
+- ansible.builtin.debug
+- ansible.builtin.command
+
+#### Facts
+
+Ansible, before connecting to the servers/host it will collect entire information form ansible nodes. so that it can take decisions based on that information
