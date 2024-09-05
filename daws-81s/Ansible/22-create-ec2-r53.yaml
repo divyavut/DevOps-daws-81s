@@ -10,6 +10,13 @@
     - backend
     - frontend
   tasks: 
+  - name: Install the python packages
+    ansible.builtin.pip:
+      name: 
+      - boto3:
+      - botocore
+      executable: pip3.9
+      
   - name: execute the command 
     amazon.aws.ec2_instance:
       name: "{{item}}"
