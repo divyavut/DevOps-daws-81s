@@ -10,4 +10,8 @@
   - name: print the user information
     ansible.builtin.debug: 
       msg: "user info: {{USER}}"
+  - name: create a user if user doesn't exit 
+    ansible.builtin.command: useradd expense 
+    when: USER.rc != 0 
+  
   
