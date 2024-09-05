@@ -13,7 +13,7 @@
   - name: Install the python packages
     ansible.builtin.pip:
       name: 
-      - boto3:
+      - boto3
       - botocore
       executable: pip3.9
       
