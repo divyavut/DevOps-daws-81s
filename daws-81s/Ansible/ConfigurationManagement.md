@@ -126,3 +126,11 @@ Ansible, before connecting to the servers/host it will collect entire informatio
 
 - (ansible.built.in.command)command --> simple command, it will not get shell environment, secure.
 - (ansible.built.in.shell)shell --> complex commands pipes, redirections, it will get shell environment, not secure
+
+#### Expense project
+
+3 servers, 3 records
+mysql.dev.divyavutakanti.com --->
+backend.dev.divyavutakanti.com --->
+frontend.dev.divyavutakanti.com ---->
+divya.vut
