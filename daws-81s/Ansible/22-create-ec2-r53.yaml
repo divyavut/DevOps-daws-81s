@@ -1,5 +1,5 @@
 - name: create a ec2 insatnce and route53 
-  hosts: web 
+  hosts: local 
   connection: local
   vars:
     subnet_id: subnet-0509f144a358e12de
@@ -19,4 +19,3 @@
       image_id: {{ami_id}}
     loop: {{instances}} 
     register: ec2_instances
-    
