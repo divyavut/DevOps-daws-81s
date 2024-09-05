@@ -2,7 +2,7 @@
   hosts: web 
   tasks: 
   - name: print names 
-    ansible.builtin.debug: 
+    ansible.builtin.package: 
       name: "{{ item }}"
       state: present 
     loop:
