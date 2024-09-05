@@ -43,4 +43,4 @@
     vars: 
       ip : 54.204.84.161
     ansible.builtin.debug: 
-      msg: "{{ip | anisble.utils.ipv4 }}"
+      msg: "{{ip | ansible.utils.ipv4 }}"
