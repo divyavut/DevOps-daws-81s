@@ -9,6 +9,7 @@
     - mysql
     - backend
     - frontend
+    zone: divyavutakanti.com
   tasks: 
   - name: Install the python packages
     ansible.builtin.pip:
@@ -28,4 +29,17 @@
     register: ec2_instances
   - name: print the output  
     ansible.builtin.debug:
-      msg: "{{ ec2_instances }}"
+      msg: "{{ ec2_instances }}" 
+  - name: create r53 records 
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{item.item}}.{{zone}}"
+      type: A
+      ttl: 1
+      value: "{{item.instances[0].private_ip_addresses}}"
+      wait: true
+      overwrite: true
+    loop: {{ec2_instances.results }}
+
+  
