@@ -38,7 +38,7 @@
         - { "key": "duration", "value": 120}
         - { "key": "trainer", "value": "sivakumar reddy"}
     ansible.builtin.debug:
-      msg: "{{course | item2dict}}"
+      msg: "{{course | items2dict}}"
   - name: check the ip address 
     vars: 
       ip : 54.204.84.161
