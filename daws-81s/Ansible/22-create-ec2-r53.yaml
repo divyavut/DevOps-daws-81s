@@ -40,6 +40,6 @@
       value: "{{item.instances[0].private_ip_addresses}}"
       wait: true
       overwrite: true
-    loop: {{ec2_instances.results }}
+    loop: "{{ ec2_instances.results }}"
 
   
