@@ -42,4 +42,16 @@
       overwrite: true
     loop: "{{ ec2_instances.results }}"
 
+  - name: create r53 public record 
+    amazon.aws.route53: 
+      state: present
+      zone: "{{ zone }}"
+      record: "{{item.item}}.{{zone}}"
+      type: A
+      ttl: 1
+      value: "{{item.instances[0].public_ip_address}}"
+      wait: true
+      overwrite: true
+    loop: ec2_instances.results.item == "frontend" 
+
   
