@@ -1,8 +1,8 @@
-- name: loops demo 
+- name: install the packages
   hosts: web 
   become: yes
   tasks: 
-  - name: print names 
+  - name: install the packages
     ansible.builtin.package: 
       name: "{{ item.name }}"
       state: "{{ item.state }}"

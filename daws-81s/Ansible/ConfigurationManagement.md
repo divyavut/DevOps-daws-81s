@@ -113,3 +113,7 @@
 #### Facts
 
 Ansible, before connecting to the servers/host it will collect entire information form ansible nodes. so that it can take decisions based on that information
+
+#### loops
+
+- item --> resered keyword
