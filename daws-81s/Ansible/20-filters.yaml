@@ -1,0 +1,9 @@
+- name: demo on filters/functions
+  hosts: web 
+  become: yes 
+  tasks: 
+  - name: print the default variables
+    ansible.builtin.debug:
+      msg: "Hi , Iam learning {{course}}"
+  
+    

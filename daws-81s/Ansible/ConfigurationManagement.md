@@ -117,3 +117,7 @@ Ansible, before connecting to the servers/host it will collect entire informatio
 #### loops
 
 - item --> resered keyword
+
+#### functions == filter
+
+- manipulations(data manipulations, file manipulations)
