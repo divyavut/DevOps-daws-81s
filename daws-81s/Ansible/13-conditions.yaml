@@ -11,4 +11,3 @@
     ansible.builtin.debug: 
       msg: "user info: {{USER}}"
   
-  - name: 
