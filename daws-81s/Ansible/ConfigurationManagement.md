@@ -96,3 +96,7 @@
 #### ansible.built.command
 
 - ansible cant garuntee the module for everything
+
+#### Error Handling ---> handling error
+
+- ignore_errors -> we know the erro just ignore it we will handle in next steps
