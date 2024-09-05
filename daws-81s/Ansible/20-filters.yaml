@@ -9,4 +9,6 @@
     ansible.builtin.debug:
       msg: "{{greeting | upper}}"
   
-    
+  - name: convert to uppercase 
+    ansible.builtin.debug:
+      msg: "{{greeting | lower}}"
