@@ -92,3 +92,7 @@
 
 - when
   to decide whether the module should run or not
+
+#### ansible.built.command
+
+- ansible cant garuntee the module for everything
