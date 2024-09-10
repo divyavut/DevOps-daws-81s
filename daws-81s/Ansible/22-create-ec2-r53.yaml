@@ -1,5 +1,6 @@
 - name: create Ec2w and route 53 records 
-  hosts: web 
+  hosts: local 
+  connection: local
   vars: 
     subnet_id: subnet-0509f144a358e12de   
     ami_id: ami-09c813fb71547fc4f
