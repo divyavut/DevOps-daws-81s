@@ -42,7 +42,7 @@
       wait: true
       overwrite: true
     loop: "{{ ec2_instances.results }}"
-    
+
   - name: create r53 public record for frontend 
     amazon.aws.route53: 
       state: present
