@@ -5,6 +5,12 @@
     mysql_root_password: mysuperpass
     login_host: dev.divyavutakanti.com 
   tasks:
+  - name: ansible to install libraries
+    ansible.builtin.pip:  
+      name:
+      - boto3
+      - botocore
+      - PyMySQL
   - name: install mysql server 
     ansible.builtin.package: 
       name: mysql-server 
