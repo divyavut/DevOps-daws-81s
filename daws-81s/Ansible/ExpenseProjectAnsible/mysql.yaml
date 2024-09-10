@@ -1,38 +1,11 @@
 - name: mysql configuration 
-  hosts: mysql
+  hosts: mysql 
   become: yes  
-  vars:
-    mysql_root_password: ExpenseApp@1
-    login_host: mysql.dev.divyavutakanti.com
-  tasks:
-  - name: install pymysql
-    ansible.builtin.pip: 
-      name: 
-      - PyMySQL 
-      executable: pip3.9
+  tasks: 
   - name: install mysql server 
     ansible.builtin.package: 
       name: mysql-server 
-      state: present
-  - name: start mysql server 
-    ansible.builtin.service:
-      name: mysqld 
-      state: started 
-      enabled: yes 
-  - name: Verify the root password configuration 
-    community.mysql.mysql_info:
-      login_user: root
-      login_password: "{{ mysql_root_password}}"
-      login_host: "{{login_host}}"
-    ignore_errors: true
-    register: mysql_info
-
-  - name: print mysql info 
-    ansible.builtin.debug:
-      msg: "{{mysql_info}}"
-
-  - name: setup MYSQL rrot password 
-    ansible.builtin.command:  mysql_secure_installation --set-root-pass mysql_root_password
-    when: mysql_info.failed is true 
+      state: present 
       
+
      
