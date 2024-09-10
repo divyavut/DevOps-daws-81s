@@ -2,8 +2,8 @@
   hosts: mysql
   become: yes  
   vars:
-    mysql_root_password: mysuperpass
-    login_host: dev.divyavutakanti.com 
+    mysql_root_password: ExpenseApp@1
+    login_host: mysql.dev.divyavutakanti.com 
   tasks:
   - name: ansible to install libraries
     ansible.builtin.pip:  
@@ -35,5 +35,5 @@
     ansible.builtin.command: "mysql_secure_installation --set-root-pass {{ login_password }} "
     when: mysql_info.failed is true 
 
-    
+
     
