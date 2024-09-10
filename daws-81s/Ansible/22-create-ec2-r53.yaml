@@ -1,58 +1,21 @@
-- name: create a ec2 instance and route53 
-  hosts: local 
-  connection: local
-  vars:
-    subnet_id: subnet-0509f144a358e12de
-    sg_id: sg-08eed4ca0fd852a9e
+- name: create Ec2w and route 53 records 
+  hosts: web 
+  vars: 
+    subnet_id: subnet-0509f144a358e12de   
     ami_id: ami-09c813fb71547fc4f
+    sg_id: sg-08eed4ca0fd852a9e
     instances:
     - mysql
     - backend
     - frontend
-    zone: dev.divyavutakanti.com
+    
   tasks: 
-  - name: Install the python packages
-    ansible.builtin.pip:
-      name: 
-      - boto3
-      - botocore
-      executable: pip3.9
-      
-  - name: execute the command 
+  - name: create ec2 instance 
     amazon.aws.ec2_instance:
-      name: "{{item}}"
+      name: "{{ item }}"
       vpc_subnet_id: "{{subnet_id}}"
-      instance_type: "t2.micro"
+      instance_type: "t2-micro"
       security_group: "{{sg_id}}"
       image_id: "{{ami_id}}"
-    loop: "{{instances}}"
-    register: ec2_instances
-  - name: print the output  
-    ansible.builtin.debug:
-      msg: "{{ ec2_instances }}" 
-  - name: create r53 records 
-    amazon.aws.route53:
-      state: present
-      zone: "{{ zone }}"
-      record: "{{item.item}}.{{zone}}"
-      type: A
-      ttl: 1
-      value: "{{item.instances[0].private_ip_address}}"
-      wait: true
-      overwrite: true
-    loop: "{{ ec2_instances.results }}"
-
-  - name: create r53 public record 
-    amazon.aws.route53: 
-      state: present
-      zone: "{{ zone }}"
-      record: "{{zone}}"
-      type: A
-      ttl: 1
-      value: "{{item.instances[0].public_ip_address}}"
-      wait: true
-      overwrite: true
-    loop: "{{ ec2_instances.results }}"
-    when: item.item == "frontend"
-
-  
+    loop: "{{ instances }}"
+    register: ec2_instances 

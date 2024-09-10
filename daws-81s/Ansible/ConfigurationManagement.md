@@ -134,3 +134,7 @@ mysql.dev.divyavutakanti.com --->
 backend.dev.divyavutakanti.com --->
 frontend.dev.divyavutakanti.com ---->
 divya.vut
+
+#### Ansible
+
+Ansible is main for configureing the servrs but it also connect to any system
