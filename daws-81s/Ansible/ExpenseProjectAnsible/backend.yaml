@@ -5,6 +5,11 @@
     mysql_root_password: ExpenseApp@1
     login_host: backend.dev.divyavutakanti.com
   tasks: 
+  - name: using pip install Pymysql to connect to db 
+    ansible.builtin.pip: 
+      name: 
+      - PyMySQL
+      executable: pip3.9
   - name: disable default nodejs 
     ansible.builtin.command: dnf module disable nodejs -y 
 
@@ -41,7 +46,7 @@
     args:
       chdir: /app 
 
-  - name: Copy file with owner and permissions
+  - name: Copy backend service
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
