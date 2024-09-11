@@ -1,6 +1,9 @@
 - name: confirgure backend server 
   hosts: backend 
   become: yes  
+  vars:
+    mysql_root_password: ExpenseApp@1
+    login_host: backend.dev.divyavutakanti.com
   tasks: 
   - name: disable default nodejs 
     ansible.builtin.command: dnf module disable nodejs -y 
@@ -32,4 +35,22 @@
       src: /tmp/backend.zip 
       dest: /app 
       remote_src: yes
+
+  - name: install dependencies
+    ansible.builtin.command: npm insatll 
+    args:
+    chdir: /app 
+  - name: Copy file with owner and permissions
+    ansible.builtin.copy:
+      src: backend.service
+      dest: /etc/systemd/system/backend.service
+
+  - name: import mysql data 
+    community.mysql.mysql_db:
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      login_host: {{ login_host }}
+      state: import 
+      name: all
+      target: /app/schema/backend.sql 
 
