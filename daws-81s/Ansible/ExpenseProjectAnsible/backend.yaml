@@ -39,8 +39,8 @@
   - name: install dependencies
     ansible.builtin.command: npm install 
     args:
-    chdir: /app 
-    
+      chdir: /app 
+
   - name: Copy file with owner and permissions
     ansible.builtin.copy:
       src: backend.service
