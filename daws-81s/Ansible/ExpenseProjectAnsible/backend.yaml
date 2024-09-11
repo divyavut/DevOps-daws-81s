@@ -9,6 +9,7 @@
     ansible.builtin.pip: 
       name: 
       - PyMySQL
+      - cryptography
       executable: pip3.9
   - name: disable default nodejs 
     ansible.builtin.command: dnf module disable nodejs -y 
@@ -53,12 +54,12 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
 
-  - name: import mysql data 
+  - name: import mysql data
     community.mysql.mysql_db:
       login_user: root
       login_password: "{{ mysql_root_password }}"
       login_host: "{{ login_host }}"
-      target: /app/schema/backend.sql 
-      state: dump 
+      target: /app/schema/backend.sql
       name: all
+      state: import
 
