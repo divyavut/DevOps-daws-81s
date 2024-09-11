@@ -37,7 +37,7 @@
       remote_src: yes
 
   - name: install dependencies
-    ansible.builtin.command: npm insatll 
+    ansible.builtin.command: npm install 
     args:
     chdir: /app 
   - name: Copy file with owner and permissions
