@@ -30,8 +30,10 @@
   ansible.builtin.template: # copy will only works for files without variables(ansible.builtin.copy)
     src: expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf 
+  notify:
+    - Restart nginx
 
-- name: restart nginx 
-  ansible.builtin.service:
-    name: nginx 
-    state: restarted 
+# - name: restart nginx 
+#   ansible.builtin.service:
+#     name: nginx 
+#     state: restarted 
