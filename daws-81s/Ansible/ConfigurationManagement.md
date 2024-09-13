@@ -138,3 +138,17 @@ divya.vut
 #### Ansible
 
 Ansible is main for configureing the servrs but it also connect to any system
+
+#### Ansible Roles
+
+-
+- tasks/ -->
+
+#### Ansible configuration setting priority
+
+- ansible --version ---> To check the ansible version and it contains anisble configuration path.
+
+1. environment variables ---> export ANSIBLE_CONFIG=path of config, export used to set the variable, unset ANSIBLE_CONFIG --> to unset the environment variable
+2. current working directory
+3. Home directory
+4. /etc/ansible/ansible.cfg
