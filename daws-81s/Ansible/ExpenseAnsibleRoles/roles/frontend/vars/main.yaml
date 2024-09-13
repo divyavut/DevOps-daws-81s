@@ -1,1 +1,3 @@
 BACKEND_HOST: backend.dev.divyavutakanti.com
+app_location: /usr/share/nginx/html
+component: frontend
