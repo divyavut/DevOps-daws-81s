@@ -1,0 +1,58 @@
+- name: "Disable default nodejs"
+  ansible.builtin.command: dnf module disable nodejs -y 
+
+- name: "Enable nodejs 20" 
+  ansible.builtin.command: dnf module enable nodejs:20 -y 
+
+- name: install nodejs and mysql client 
+  ansible.builtin.package: 
+    name: "{{ item }}"
+    state: present 
+  loop: 
+  - nodejs 
+  - mysql  
+
+- name: create expense user 
+  ansible.builtin.user: 
+    name: expense 
+
+- name: create app directory 
+  ansible.builtin.file: 
+    path: /app 
+    state: directory 
+
+- name: download the backend code 
+  ansible.builtin.get.url: 
+    url : https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip 
+    dest: /tmp/backend.zip 
+
+- name: extract the backend code 
+  ansible.builtin.unarchive: 
+    src: /tmp/backend.zip 
+    dest: /app
+
+- name: install dependencies 
+  ansible.builtin.command: npm install 
+  args: 
+    chdir: /app
+
+- name: copy backend service # copy only works for files without variables  # (ansible.builtin.copy:)
+  ansible.builtin.template:
+    src: backend.service.j2
+    dest: /etc/systemd/system/backend.service 
+
+- name: ansible to install pymysql 
+  ansible.builtin.pip: 
+    name: 
+    - PyMySQL 
+    - cryptography 
+    executable: pip3.9
+
+- name: import mysql data 
+  community.mysql.mysql_db:
+    login_user: root 
+    login_password: "{{ mysql_root_password}}"
+    login_host: "{{ login_host }}"
+    target: /app/schema/backend.sql 
+    name: all 
+    state: import 

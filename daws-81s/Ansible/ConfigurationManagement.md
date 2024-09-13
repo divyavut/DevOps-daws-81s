@@ -152,3 +152,5 @@ Ansible is main for configureing the servrs but it also connect to any system
 2. current working directory
 3. Home directory
 4. /etc/ansible/ansible.cfg
+
+#### jinja2 ---> templating language
