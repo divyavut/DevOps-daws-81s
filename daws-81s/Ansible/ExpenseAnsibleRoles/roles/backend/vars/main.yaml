@@ -1,2 +1,4 @@
 mysql_root_password: ExpenseApp@1
 login_host: mysql.dev.divyavutakanti.com
+app_location: /app
+component: backend
