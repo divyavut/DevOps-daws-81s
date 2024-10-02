@@ -8,8 +8,10 @@ Example : In Linux machine sshd service is running in the system, we connect to 
 
 1. /etc/ssh/sshd_config ---> main configuration file for the SSH (Secure Shell) daemon, sshd, on a Linux system.
 2. This file controls how the SSH service operates, including settings for security, authentication, connection options, and logging.
+3. sshd_config: Configures the server side (for managing incoming SSH connections).
+4. ssh_config: Configures the client side (for managing outgoing SSH connections).
 
-3. Purpose: Configures the behavior and security settings of the SSH server (sshd).
+5. Purpose: Configures the behavior and security settings of the SSH server (sshd).
 
 ### Common Configuration Options:
 
