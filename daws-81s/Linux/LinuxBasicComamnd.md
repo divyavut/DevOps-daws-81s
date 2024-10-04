@@ -59,6 +59,9 @@
 
 Represents the current directory.
 
-#### . (Double Dot)
+#### .. (Double Dot)
 
 Represents the parent directory of the current directory.
+
+#### change hostname of system (its basically host from network)
+sudo hostnamectl set-hostname my-new-hostname
