@@ -4,7 +4,7 @@
 
 #### Public key stores in .ssh/authorized_keys directory
 
-Home directory of any user have .ssh/authorized_keys directory where public keys are stored.
+Home directory of any user have .ssh/authorized_keys directory where public keys are stored, if the server is using key based authentication.
 
 #### User login using private key to the Server
 
