@@ -53,4 +53,5 @@ EXPOSE instruction used to let the image user knows that what ports will open wh
 
 
 #### USER 
+For security you should not run the container using the root user, it must be the normal user. Atleasst last instruction should be USER <Some-user>.
 
