@@ -63,14 +63,19 @@ For security you should not run the container using the root user, it must be th
 - ARG is used as a Variables at image build time only, not inside the container.
 
 #### ARG VS ENV
-- ENV variables is accessed at image build time and inside the container, ENV variables can be ovverriden  at container runtime
+1. ENV variables is accessed at image build time and inside the container, ENV variables can be ovverriden  at container runtime
 
          docker run -d  -e APP_ENV=staging- --name container_name <image_name>  .
     
-- ARG  variables is accessed at the time of image creation. ARG values can be override at runtime while building the image with an option.
+2. ARG  variables is accessed at the time of image creation. ARG values can be override at runtime while building the image with an option.
   
             docker build -t <image_name> --build-arg <key>=<value> .
--
+
+3. we can use ARG Instruction before the FROM instrcution to supply the version to the base image.
+4. ARG instruction before FROM instruction is valid until From Instruction, it can't be accessed  after FROM.
 
 
+#### How can I access ARG values inside container
+- We can assign the ARG value to the ENV variables.
 
+     ENV var_name=$var_name
