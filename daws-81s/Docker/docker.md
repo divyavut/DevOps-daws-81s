@@ -63,4 +63,9 @@ For security you should not run the container using the root user, it must be th
 - ARG is used as a Variables at image build time only, not inside the container.
 
 #### ARG VS ENV
-- ARG is accssed at i
+- ENV variables is accessed at image build time and inside the container
+- ARG  variables is accessed at the time of image creation. ARG values can be override at runtime while building the image.
+-
+
+
+
