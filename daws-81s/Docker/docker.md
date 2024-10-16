@@ -35,3 +35,4 @@ The command given in the CMD instruction should always infinite times
 It adds meta data to the image like description, who id the owner of the image. used to filter the images.
 
 #### EXPOSE 
+EXPOSE instruction used to let the image user knows that what ports will open when container runs. it only gives the container port information for the image user.
