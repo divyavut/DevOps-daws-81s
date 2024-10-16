@@ -39,7 +39,7 @@ It adds meta data to the image like description, who id the owner of the image. 
 EXPOSE instruction used to let the image user knows that what ports will open when container runs. it only gives the container port information for the image user.
 
 #### ENV 
-- Set the environment variables, these can be used inside the container
+- Set the environment variables to the container, this can be used inside the container.
 
 #### ADD
 - ADD Instruction is same as COPY , but it has to extra capabilities. 
@@ -55,3 +55,9 @@ EXPOSE instruction used to let the image user knows that what ports will open wh
 #### USER 
 For security you should not run the container using the root user, it must be the normal user. Atleasst last instruction should be USER <Some-user>.
 
+#### WORKDIR
+- cd will not work in the docker, we have to use WORKDIR instruction to change the directory.
+- WORKDIR instruction is used to set the current working directory inside the docker image
+
+#### ARG
+- ARG is used to the Variables at build time only, not inside the container.
