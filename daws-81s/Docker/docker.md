@@ -21,6 +21,7 @@
 - docker login -u <username>
 - docker push <image_name>:<version>
 - docker pull <image_name>:<version>
+- docker logs -f <container_name/Container_id>
 
 
 ### RUN VS CMD
@@ -47,3 +48,6 @@ EXPOSE instruction used to let the image user knows that what ports will open wh
 
 #### CMD VS ENTRYPOINT
 - CMD can be overridne at runtime
+- we can't override the ENTRYPOINT at runtime. If you try to do it, it will go and append to the entrypoint command.
+- for better results and best practices
+
