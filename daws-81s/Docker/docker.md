@@ -79,3 +79,17 @@ For security you should not run the container using the root user, it must be th
 - We can assign the ARG value to the ENV variables.
 
      ENV var_name=$var_name
+
+#### ONBUILD 
+- Onbuild instruction will trigger only, when user is using the image which has Onbuild instruction as base image.
+
+
+##### Expense Project
+
+#### Mysql
+1. Take one base os like almalinux:9, install mysql server
+2. Take mysql server Official image (Dont bother about OS and packages(software), just run the application just placing the code) --> best option
+
+
+Mysql ---> Administrator team will run sql scritps to configure the database server --->  best option
+Backend ---> backend team can connect to mysql server and run the sql queries( here backend team requires the database root password to connect and run the sql scripts) 
