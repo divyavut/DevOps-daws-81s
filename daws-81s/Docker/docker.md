@@ -4,15 +4,18 @@
 
 #### CMD command
 - CMD instruction run at the time of container of creation. it represents startup program for the container. It keeps the conatiner running.
+- run nginx manually --> nginx -g daemon off;
 
 #### RUN command 
-- Run command executes when image is created from docker file.
+- it is used to configure the image like installing packages Run command executes when image is created from docker file.
 
 #### Systemctl 
 - systemctl only works for full server, it will not work for containers.
 
    /etc/systemd/system/nginx.service
-
+####  what diorectory the systemctl services will be present?
+- /etc/systemd/system/nginx.service.
+- command of nginx will be there in nginx.service. this command will be runned by Systemctl.
 #### Docker commands
 - docker tag <oldimage> <newimage> --> retag
 - docker login -u <username>
