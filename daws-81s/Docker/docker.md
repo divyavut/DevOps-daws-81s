@@ -40,5 +40,7 @@ EXPOSE instruction used to let the image user knows that what ports will open wh
 #### ENV 
 - Set the environment variables, these can be used inside the container
 
-#### COPY 
-- 
+#### ADD
+- ADD Instruction is same as COPY , but it has to extra capabilities. 
+    1. It can get files from internet
+    2. It can extract the files into the images
