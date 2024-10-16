@@ -22,7 +22,7 @@
 
 ### RUN VS CMD
 - RUN instruction will run at the time of image is creation
-- CMD instaructrion will run at time of container creation.
+- CMD instaruction will run at time of container creation.
 
 
 ### Note: 
@@ -31,4 +31,4 @@ The command given in the CMD instruction should always infinite times
 #### LABELS
 It adds meta data to the image like description, who id the owner of the image. used to filter the images.
 
-#### EXPOSE
+#### EXPOSE 
