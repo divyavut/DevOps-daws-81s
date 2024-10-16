@@ -17,3 +17,9 @@
 - After editing the bash_profile, we have to logout and log back. we have to source the file to apply the changes
 
                 source ~/.bash_profile
+
+            - 
+When a user logs into a Linux system, the sequence of events typically proceeds as follows:
+- System boots up and initializes services (using systemctl).
+- User logs in, creating a new shell session.
+- Bash reads .bash_profile (or .profile) to set up the user environment.
