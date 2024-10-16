@@ -36,3 +36,9 @@ It adds meta data to the image like description, who id the owner of the image. 
 
 #### EXPOSE 
 EXPOSE instruction used to let the image user knows that what ports will open when container runs. it only gives the container port information for the image user.
+
+#### ENV 
+- Set the environment variables, these can be used inside the container
+
+#### COPY 
+- 
