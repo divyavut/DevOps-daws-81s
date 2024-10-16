@@ -45,5 +45,5 @@ EXPOSE instruction used to let the image user knows that what ports will open wh
     1. It can get files from internet
     2. It can extract the tar files and place the untar file into the container.
 
-#### ENTRYPOINT
-- 
+#### CMD VS ENTRYPOINT
+- CMD can be overridne at runtime
