@@ -7,7 +7,7 @@
 - run nginx manually --> nginx -g daemon off;
 
 #### RUN command 
-- it is used to configure the image like installing packages Run command executes when image is created from docker file.
+- it is used to install packages and configure the images. Run command executes when image is created from docker file.
 
 #### Systemctl 
 - systemctl only works for full server, it will not work for containers.
@@ -43,4 +43,7 @@ EXPOSE instruction used to let the image user knows that what ports will open wh
 #### ADD
 - ADD Instruction is same as COPY , but it has to extra capabilities. 
     1. It can get files from internet
-    2. It can extract the files into the images
+    2. It can extract the tar files and place the untar file into the container.
+
+#### ENTRYPOINT
+- 
