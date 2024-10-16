@@ -60,4 +60,7 @@ For security you should not run the container using the root user, it must be th
 - WORKDIR instruction is used to set the current working directory inside the docker image
 
 #### ARG
-- ARG is used to the Variables at build time only, not inside the container.
+- ARG is used as a Variables at image build time only, not inside the container.
+
+#### ARG VS ENV
+- ARG is accssed at i
