@@ -29,4 +29,6 @@
 The command given in the CMD instruction should always infinite times
 
 #### LABELS
-It adds meta data to the image like description, who id the owner of the image. used to filter the image
+It adds meta data to the image like description, who id the owner of the image. used to filter the images.
+
+#### EXPOSE
