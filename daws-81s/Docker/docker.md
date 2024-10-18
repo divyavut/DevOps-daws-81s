@@ -86,7 +86,11 @@ For security you should not run the container using the root user, it must be th
 #### Docker Networking
 - Three type of networking 
 1. Host Networking
+ - If container is  created using host network, it dont get container IP.
+ - Conatainer only gets IP from host
+ - If we launch all containers using host network, all containers(mysql,backend,frontend) communicate each other within the host using localhost
 2. Bridge Networking
+ - 
 3. Overlay networking --> networking between multiple hosts
 
 ##### Expense Project
