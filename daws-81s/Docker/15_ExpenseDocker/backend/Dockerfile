@@ -7,4 +7,3 @@ COPY package.json .
 COPY *.js .
 RUN npm install 
 CMD ["node", "index.js"]
-https://github.com/daws-81s/expense-docker/blob/main/frontend/Dockerfile

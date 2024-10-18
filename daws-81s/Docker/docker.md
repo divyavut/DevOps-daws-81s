@@ -87,7 +87,7 @@ For security you should not run the container using the root user, it must be th
 - Three type of networking 
 1. Host Networking
 2. Bridge Networking
-3. Overlay netwroking
+3. Overlay networking --> networking between multiple hosts
 
 ##### Expense Project
 
