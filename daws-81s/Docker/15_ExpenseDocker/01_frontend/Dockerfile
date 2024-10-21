@@ -1,4 +1,4 @@
-FROM NODE:20
+FROM node:20
 RUN  rm -rf /usr/share/nginx/html/*
 COPY code /usr/share/nginx/html/index.html
 RUN rm -rf /etc/nginx/nginx.conf
