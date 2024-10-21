@@ -87,11 +87,24 @@ For security you should not run the container using the root user, it must be th
 - Three type of networking 
 1. Host Networking
  - If container is  created using host network, it dont get container IP.
- - Conatainer only gets IP from host
+ - Container can be acessible to external traffic  through host IP.
  - If we launch all containers using host network, all containers(mysql,backend,frontend) communicate each other within the host using localhost
 2. Bridge Networking
- - 
-3. Overlay networking --> networking between multiple hosts
+ - Default bridge network is not having dns functionality
+ - custom bridge network is a having dns functionality
+ - Container get an IP, so that containers can communicate with each other with container IP and with inbuilt DNS functionality.
+ - Container can be accesssible  to external traffic through host Ip and host port
+3. Overlay networking --> networking between multiple hosts(docker hosts)
+
+
+### Volume
+- UnNames Volumes
+  -  -v hostpath: containerpath
+- Named volumes
+  - create a volume 
+   - docker volume create volume_name
+  - -v volume_name:/container_path
+  - named voulmes are created and maintained by docker at this location : /var/lib/docker/volumes/volune_name/_data
 
 ##### Expense Project
 
@@ -102,3 +115,4 @@ For security you should not run the container using the root user, it must be th
 
 Mysql ---> Administrator team will run sql scritps to configure the database server --->  best option
 Backend ---> backend team can connect to mysql server and run the sql queries( here backend team requires the database root password to connect and run the sql scripts) 
+

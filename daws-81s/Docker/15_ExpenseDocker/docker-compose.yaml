@@ -1,0 +1,24 @@
+version: "3"
+networks: 
+  expense: 
+volumes: 
+  mysql: 
+services: 
+  mysql: 
+    image: divyavuatakanti/mysql:v1
+    container_name: mysql  # --name mysql 
+    volumes: 
+    - mysql:/var/lib/mysql # -v volume_name:container_path (named volume managed by docker At the location of /var/lib/docker/volumes/volume_name/_data)
+  backend: 
+    image: divyavutakanti/backend:v1 
+    container_name: backend 
+    command: sh -c "sleep 5 && node /opt/server/index.js"
+    depends_on:
+    - mysql
+  frontend: 
+    image: divyavutakanti/frontend:v1 
+    container_name: frontend
+    ports:
+    - 80:80
+    depends_on:
+    - backend
