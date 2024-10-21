@@ -116,3 +116,12 @@ For security you should not run the container using the root user, it must be th
 Mysql ---> Administrator team will run sql scritps to configure the database server --->  best option
 Backend ---> backend team can connect to mysql server and run the sql queries( here backend team requires the database root password to connect and run the sql scripts) 
 
+
+
+#### Docker compose 
+- Docker compose To define and run multiple containers 
+  - docker compose up --> builld image if images are not build and run conatiners
+  - docker compose down ---> stop the containers
+  - docker compose --build ---> build the image if images are not build yet.
+####  Best practices to follow while create a image
+
