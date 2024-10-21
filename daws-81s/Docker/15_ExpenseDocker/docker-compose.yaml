@@ -5,7 +5,7 @@ volumes:
   mysql: 
 services: 
   mysql: 
-    image: divyavuatakanti/mysql:v1
+    image: divyavutakanti/mysql:v1
     container_name: mysql  # --name mysql 
     volumes: 
     - mysql:/var/lib/mysql # -v volume_name:container_path (named volume managed by docker At the location of /var/lib/docker/volumes/volume_name/_data)
