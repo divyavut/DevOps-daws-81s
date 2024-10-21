@@ -124,4 +124,19 @@ Backend ---> backend team can connect to mysql server and run the sql queries( h
   - docker compose down ---> stop the containers
   - docker compose --build ---> build the image if images are not build yet.
 ####  Best practices to follow while create a image
+ - frequently changes instruction should be bottom of the docker file. so we can save build time, and memory.(Image layers)
+ - minimal image (alphine)
+ - image tagging should not use latest keyword instead use version number.
+ - create and run container with non root user.
+
+
+ #### How docker image layering works
+ - docker images are working based on layers
+ - every instruction creates a intermediate container and run the next instruction inside it and then save the conatiner as image layer.
+ - to run next instruction, docker creates a intermediate container again from this image.
+ - it goes on untill all instruction are completd in docker file. at each step intermediate containers are removed, each layer is cached and when you push it pushes the layers.
+ - 
+
+
+
 
