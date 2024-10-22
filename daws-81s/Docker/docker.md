@@ -162,3 +162,10 @@ Backend ---> backend team can connect to mysql server and run the sql queries( h
 - docker run -d --name nginx01 -p 80:80 nginx 
 - docker checks whether the image exist in local or not, if exist it will run. if not exist, it will pull from docker registry/hub , create a container out of it, run it and send the output to the client.
 
+#### Docker Disadvantages
+- There is no relibility since there is only one docker host...
+- there is no autoscalling 
+- there is no load balancing
+- the volumes are inside the docker host... poor volume management
+- security.. no secrets manage mnagement
+- no communication between  containers in one host with another host
