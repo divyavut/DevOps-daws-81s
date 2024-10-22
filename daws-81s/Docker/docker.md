@@ -135,8 +135,30 @@ Backend ---> backend team can connect to mysql server and run the sql queries( h
  - every instruction creates a intermediate container and run the next instruction inside it and then save the conatiner as image layer.
  - to run next instruction, docker creates a intermediate container again from this image.
  - it goes on untill all instruction are completd in docker file. at each step intermediate containers are removed, each layer is cached and when you push it pushes the layers.
- - 
+ 
+
+ #### Multi stage builds
+- Development and running(executing)
+- JDK (Java development kit)
+- JRE( java runtime environment)
+- Build output of Java code is .jar files
+- JDK > JRE is subnet of JDK
+
+- npm install ( npm is a build tool for node js application)
+- For Node js project, build ouput is node_modules.
+- npm install --> node_modules
 
 
+- it looks like two docker files.
+  - first docker file we use for build
+  - second docker file for only extract the build output of first docker file
 
+#### Docker usage in devops project
+- we restrict docker for only image building( multiple stage build)
+
+##### Docker Archeticuture 
+- client ---> docker command
+- docker host/daemon ---> docker service is running
+- docker run -d --name nginx01 -p 80:80 nginx 
+- docker checks whether the image exist in local or not, if exist it will run. if not exist, it will pull from docker registry/hub , create a container out of it, run it and send the output to the client.
 
