@@ -4,8 +4,8 @@
 LOG_FOLDER=/var/log/shell-script/
 SCRIPT_NM=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NM-TIMESTAMP.log"
 mkdir -p $LOG_FOLDER
+LOG_FILE="${LOG_FOLDER}/${SCRIPT_NM}-${TIMESTAMP}.log"
 
 #Color Codes
 R="\e[31m"

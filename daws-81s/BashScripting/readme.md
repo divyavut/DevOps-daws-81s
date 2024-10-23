@@ -77,7 +77,7 @@ Repeated task can be placed in the function. We have calling function, called fu
 
 #### tee
 
-tee -a --> write the standard input to the terminal and standard output to the file.
+tee -a --> display the standard output to the terminal and append standard output to the file.
 
 #### Idempotentcy
 
