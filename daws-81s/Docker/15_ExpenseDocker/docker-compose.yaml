@@ -21,4 +21,8 @@ services:
     ports:
     - 80:80
     depends_on:
-    - backend
+    - backend 
+  debug: 
+   image: divyavutakanti/debug:v1
+   container_name: debug 
+   
