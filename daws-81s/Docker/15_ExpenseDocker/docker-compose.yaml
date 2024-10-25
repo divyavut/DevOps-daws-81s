@@ -1,7 +1,7 @@
 version: "3"
 networks: 
-  expense: 
-volumes: 
+  expense: # docker netwrok create <custom_bridge_network_name>
+volumes: # docker volume create <named_volume>
   mysql: 
 services: 
   mysql: 
