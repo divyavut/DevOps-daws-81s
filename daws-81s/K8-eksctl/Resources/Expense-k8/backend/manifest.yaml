@@ -1,0 +1,56 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata: 
+  name: backend
+  namespace: expense
+data: 
+  DB_HOST: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: backend
+  namespace: expense
+  labels: 
+    app: backend
+    tier: api
+    project: expense 
+spec: 
+  replicas: 3 
+  selector: 
+    matchLabels:
+      app: backend
+      tier: api
+      project: expense 
+  template: 
+    metadata: 
+      labels: 
+        app: backend
+        tier: api
+        project: expense 
+    spec: 
+      containers:
+      - name: backend
+        image: divyavutakanti/backend:v1
+        envFrom:
+        - configMapRef: 
+            name: backend
+
+---
+
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: backend
+  namespace: expense
+spec: 
+  selector: 
+    app: backend
+    tier: api
+    project: expense 
+  type: ClusterIP
+  ports: 
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    

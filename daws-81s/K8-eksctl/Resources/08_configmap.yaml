@@ -1,0 +1,7 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata: 
+  name: nginx-configmap
+data: 
+  Course: k8
+  duration: "10hrs" 

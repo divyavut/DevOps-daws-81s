@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: pod
+metadata: 
+  name: pod 
+  labels: 
+    environment: dev
+    project: expense 
+    module: backend 
+spec: 
+  containers:
+  - name: nginx
+    image: nginx
+    containerPort: 80
+    # env: 
+    # - name: course 
+    #   valueFrom: 
+    #     configMapKeyRef: 
+    #       name: nginx-configmap
+    #       key: course 
+    # - name: course 
+    #   valueFrom: 
+    #     configMapKeyRef: 
+    #       name: nginx-configmap
+    #       key: course     
+    envFrom: 
+    - configMapRef: 
+        name: nginx-configmap
