@@ -103,7 +103,7 @@ CRUD
 - 401 ---> BAD Request
 - 402 ---> unauthorised (user require authentication(permission))
 - 403 ---> Forbidden (user has autentication but dont have resource authorisation)
-- 404 ---> Not found(server says unable to understand the request url send by cleint)
+- 404 ---> Not found(server says unable to understand the request url send by client)
 - 405 ---> Method not found
 
 #### who is client for backend --> Frontend
