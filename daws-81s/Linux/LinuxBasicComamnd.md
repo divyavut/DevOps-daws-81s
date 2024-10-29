@@ -65,3 +65,9 @@ Represents the parent directory of the current directory.
 
 #### change hostname of system (its basically host from network)
 sudo hostnamectl set-hostname my-new-hostname
+
+#### Curl 
+- curl stands for "Client for URLs." It is commonly used to make requests to web servers and APIs.
+- localhost is a hostname that refers to the local machine
+- It is equivalent to the IP address 127.0.0.1
+- When you use localhost, you are communicating with services that are running on your own computer.
