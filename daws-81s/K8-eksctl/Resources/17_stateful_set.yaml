@@ -9,7 +9,7 @@ spec:
   selector: 
     matchLabels:
       app: nginx 
-  service: nginx-service-stateful
+  serviceName: nginx-service-stateful
   template: 
     metadata: 
       name: stateful-pod
