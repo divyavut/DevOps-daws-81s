@@ -29,7 +29,7 @@ metadata:
 spec: 
   selector: 
     app: nginx 
-  clusterIp: None
+  clusterIP: None
   ports: 
   - port: 80 
     targetPort: 80
