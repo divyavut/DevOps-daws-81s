@@ -28,3 +28,36 @@ spec:
   resources:
     requests:
       storage: 5Gi
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  lables: 
+    purpose: efs-static 
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: efs-static
+      mountPath: /data
+  volumes:
+  - name: efs-static
+    persistentVolumeClaim:
+      claimName: expense-static-pvc
+---
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: nginx-service 
+spec: 
+  selector: 
+    purpose: efs-static  
+  type: LoadBalancer
+  ports: 
+  - port: 80 
+    targetPort: 80
+    protocol: TCP 
+    nodePort: 30007
