@@ -4,7 +4,7 @@ metadata:
   name: mysql-headless
   namespace: expense
 spec:
-  clusterIP: None # for headless service there is no cluster Ip
+  clusterIP: None # for headless service there is no cluster IP
   selector:
     project: expense
     component: mysql
@@ -12,10 +12,8 @@ spec:
   ports:
   - protocol: TCP
     port: 3306 # service port
-    targetPort: 3306 # container port
-
+    targetPort: 3306
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
@@ -29,36 +27,36 @@ spec:
   ports:
   - protocol: TCP
     port: 3306 # service port
-    targetPort: 3306 # container port
+    targetPort: 3306
 ---
 apiVersion: apps/v1
 kind: StatefulSet
-metadata: 
+metadata:
   name: mysql
   namespace: expense
-spec: 
-  replicas: 3 
-  selector: 
+spec:
+  selector:
     matchLabels:
       project: expense
       component: mysql
       tier: db
-  serviceName: mysql-headless
-  template: 
-    metadata: 
-      labels: 
+  serviceName: "mysql-headless" # this is the headless service should be mentioned for statefulset
+  replicas: 2 # 
+  template:
+    metadata:
+      labels:
         project: expense
         component: mysql
         tier: db
-    spec: 
+    spec:
       containers:
       - name: mysql
         image: divyavutakanti/mysql:v1
-        volumeMounts: 
+        volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
-  # this is the pvc definiation, directly metioned
-  volumeClaimTemplates: 
+  # This is PVC defnition, directly mentioned here
+  volumeClaimTemplates:
   - metadata:
       name: mysql
     spec:
