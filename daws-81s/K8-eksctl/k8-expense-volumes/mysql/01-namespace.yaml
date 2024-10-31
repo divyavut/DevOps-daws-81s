@@ -7,4 +7,3 @@ metadata:
     project: expense
     environment: dev 
     tier: mysql
-
