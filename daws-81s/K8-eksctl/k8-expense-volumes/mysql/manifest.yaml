@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: joindevops/mysql:v1
+        image: divyavutakanti/mysql:v1
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
