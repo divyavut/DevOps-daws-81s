@@ -2,6 +2,6 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: expense-ebs
-provisioner: ebs.csi.aws.com
 reclaimPolicy: Retain
+provisioner: ebs.csi.aws.com
 volumeBindingMode: WaitForFirstConsumer # storage will be created when pod is getting created
