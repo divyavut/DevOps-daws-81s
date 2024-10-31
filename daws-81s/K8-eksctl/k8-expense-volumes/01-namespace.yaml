@@ -5,5 +5,4 @@ metadata:
   namespace: expense
   labels: 
     project: expense
-    environment: dev 
-    tier: mysql
+    environment: dev
