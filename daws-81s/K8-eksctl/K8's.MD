@@ -24,5 +24,43 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 - One is main container and another is helper container. (example: helper conatiner stores logs of main container).
 - these are useful in sidecar and proxy patterns.
 
-### Replica set 
+#### Replica set 
 - replica set will not update the image version, only reposibility is to mantain  the desired copy of replicas 
+
+#### Deployment 
+- when deployment is created replicas set creates.
+- deployment have self  healing mechanism
+
+### Satatefull set 
+- For stateful application(database)
+- for every pod, one ebs volume should be mapped
+- pods is created in order, runs one after one, even deleteion follows same pattern
+
+#### Deamon sets
+- Dynamicallay runs only one pod one node
+- used for monitoring workloads (prometheus)
+#### PV and PVC
+- Static provisioning
+  1. create volume in aws cloud platfrom
+  2. install driver(kubernestes drivers has to be install to communicatweith gcloud cloud)(system to system communication need drivers)
+  3. EKS should have permisiion to access the EBS volume (create role sfor worker nodes in EKS cluster)
+  4. CSI driver: https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
+- Dynamic provisioning 
+
+#### EBS vs EFS 
+- EBS is elastic block store, EFS uses NFS file system
+- EBS should be as near as possible, EFS can be anywhere
+- EBS is faster compared to EFS
+- EBS we can store OS, Databases. EFS is not good for OS and DB
+- EFS Can increase storage limit automatically
+- Files are stored in EFS.
+
+1. create EFS volume
+2. install drivers : https://github.com/kubernetes-sigs/aws-efs-csi-driver [ Manifest (private registry) ]
+  - kubectl kustomize \
+    "github.com/kubernetes-sigs/aws-efs-csi-driver/deploy/kubernetes/overlays/stable/ecr/?ref=release-2.X" > private-ecr-driver.yaml
+3. give ebs acess permisiion to eks
+4. Efs should allow 2049 traffic from eks worker nodes
+5. create pv 
+6. create pvc 
+7. pods can claim pvc

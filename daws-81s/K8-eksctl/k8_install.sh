@@ -12,7 +12,7 @@ sudo systemctl enable docker
 sudo usermod -aG docker ec2-user
 echo -e "$R Logout and Login again $N"
 
-# Install K8 (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html#linux_amd64_kubectl)
+# Install Kubectl (https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html#linux_amd64_kubectl)
 sudo curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.31.0/2024-09-12/bin/linux/amd64/kubectl
 # Exectue permission to binary
 sudo chmod +x ./kubectl
