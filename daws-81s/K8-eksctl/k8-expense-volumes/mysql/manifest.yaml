@@ -54,9 +54,9 @@ spec:
       containers:
       - name: mysql
         image: divyavutakanti/mysql:v1
-      volumeMounts: 
-      - name: mysql
-        mountPath: /var/lib/mysql
+        volumeMounts: 
+        - name: mysql
+          mountPath: /var/lib/mysql
   # this is the pvc definiation, directly metioned
   volumeClaimTemplates: 
   - metadata:
