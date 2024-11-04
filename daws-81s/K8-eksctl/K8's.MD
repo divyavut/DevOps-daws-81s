@@ -64,3 +64,8 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 5. create pv 
 6. create pvc 
 7. pods can claim pvc
+
+
+### Vertical and horitozal scaling(HPA)
+- You have to install metrics server
+- we have to mention resources limits and requests for the pod
