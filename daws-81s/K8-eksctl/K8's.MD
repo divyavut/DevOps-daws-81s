@@ -69,3 +69,12 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 ### Vertical and horitozal scaling(HPA)
 - You have to install metrics server
 - we have to mention resources limits and requests for the pod
+#### Install kubens
+
+    sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+    sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+    sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+#### Install k9s
+- https://github.com/derailed/k9s (url)
+
+      curl -sS https://webinstall.dev/k9s | bash
