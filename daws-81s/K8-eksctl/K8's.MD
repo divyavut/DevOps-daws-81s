@@ -14,6 +14,7 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 - create a cluster using below command 
  
     eksctl create cluster --config-file=name_yaml_file 
+    eksctl delete cluster --config-file=
 #### Pod
 - Pod is the smallest object in k8s.
 - pod have multiple containers sharing same IPs address.
@@ -68,7 +69,8 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 
 ### Vertical and horitozal scaling(HPA)
 - You have to install metrics server
-- we have to mention resources limits and requests for the pod
+- we have to mention resources requests and limits for the pod
+- we will attach HPA to the Deployment
 #### Install kubens
 
     sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
