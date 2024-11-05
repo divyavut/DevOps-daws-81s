@@ -68,7 +68,7 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 
 
 ### Vertical and horitozal scaling(HPA)
-- You have to install metrics server
+- You have to install metrics server (kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml)
 - we have to mention resources requests and limits for the pod
 - we will attach HPA to the Deployment
 #### Install kubens
