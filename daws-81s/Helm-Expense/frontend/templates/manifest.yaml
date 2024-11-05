@@ -48,7 +48,7 @@ spec:
  targetCPUUtilizationPercentage: {{ .Values.hpa.cpuUtilisation }} 
 
 --- 
- kind: Service
+kind: Service
 apiVersion: v1
 metadata:
   name: frontend
