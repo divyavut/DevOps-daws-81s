@@ -80,3 +80,13 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 - https://github.com/derailed/k9s (url)
 
       curl -sS https://webinstall.dev/k9s | bash
+
+#### Apache bench install tool(for pushing load on server for testing)
+- To install Apache Bench, which is in the httpd-tools package, we’ll use dnf:
+
+              dnf install httpd-tools
+- Apache Bench (ab) is a load testing and benchmarking tool for Hypertext Transfer Protocol (HTTP) server.
+
+              ab -n 100 -c 10 https://www.apache.org/        
+
+  - ab --help
