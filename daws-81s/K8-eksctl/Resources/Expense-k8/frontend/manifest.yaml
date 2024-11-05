@@ -50,6 +50,7 @@ spec:
     protocol: TCP
 
 ---
+
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
