@@ -1,5 +1,5 @@
 deployment:
-  imageVersion: latest
+  imageVersion: alpine
   replicas: 2
 service:
   port: 80
