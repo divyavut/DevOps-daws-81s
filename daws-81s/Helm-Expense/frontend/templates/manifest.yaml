@@ -8,7 +8,7 @@ metadata:
     tier: web
     project: expense
 spec:
-  replicas: {{ .values.deployment.replicas }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
       app: frontend
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: joindevops/frontend:{{ .values.deployment.imageVersion }}
+        image: joindevops/frontend:{{ .Values.deployment.imageVersion }}
         resources:
           requests:
             cpu: 100m
@@ -45,7 +45,7 @@ spec:
    name: frontend
  minReplicas: 1
  maxReplicas: 10
- targetCPUUtilizationPercentage: {{ .values.hpa.cpuUtilisation }} 
+ targetCPUUtilizationPercentage: {{ .Values.hpa.cpuUtilisation }} 
 
 --- 
  kind: Service

@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: joindevops/backend:{{ .values.deployment.imageVersion }}
+        image: joindevops/backend:{{ .Values.deployment.imageVersion }}
         resources:
           requests:
             cpu: 100m
@@ -72,4 +72,4 @@ spec:
    name: backend
  minReplicas: 1
  maxReplicas: 10
- targetCPUUtilizationPercentage: {{ .values.hpa.cpuUtilization }} # usually 75 in real environment
+ targetCPUUtilizationPercentage: {{ .Values.hpa.cpuUtilization }} # usually 75 in real environment
