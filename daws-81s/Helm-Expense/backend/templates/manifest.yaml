@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend
+  namespace: expense
+data:
+  DB_HOST: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: expense
+  labels:
+    app: backend
+    tier: api
+    project: expense
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+      tier: api
+      project: expense
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: api
+        project: expense
+    spec:
+      containers:
+      - name: backend
+        image: joindevops/backend:{{ .values.deployment.imageVersion }}
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          # limits is greater than or equal to requests
+          limits:
+            cpu: 100m
+            memory: 128Mi
+        envFrom:
+        - configMapRef:
+            name: backend
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: backend
+  namespace: expense
+spec:
+  selector:
+    app: backend
+    tier: api
+    project: expense
+  ports:
+  - name: backend-port
+    protocol: TCP
+    port: 8080 # service port
+    targetPort: 8080 # container port
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+ name: backend
+ namespace: expense
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: backend
+ minReplicas: 1
+ maxReplicas: 10
+ targetCPUUtilizationPercentage: {{ .values.hpa.cpuUtilization }} # usually 75 in real environment

@@ -1,0 +1,4 @@
+deployment:
+  imageVersion: v1
+hpa:
+  cpuUtilization: 20
