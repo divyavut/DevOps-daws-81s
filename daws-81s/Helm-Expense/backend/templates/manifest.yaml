@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: joindevops/backend:{{ .Values.deployment.imageVersion }}
+        image: divyavutakanti/backend:{{ .Values.deployment.imageVersion }}
         resources:
           requests:
             cpu: 100m
