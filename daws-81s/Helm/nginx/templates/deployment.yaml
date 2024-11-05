@@ -1,21 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: nginx-deploy
-  labels: 
-    app: nginx 
-spec: 
-  replicas: {{ .values.deployment.replicas}}
-  selector: 
+metadata:
+  name: nginx
+  labels: # these are replicaset labels
+    app: nginx
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    # these are used to select the pod to create replicas
     matchLabels:
-      app: nginx 
-  template: 
-    metadata: 
-      labels: 
-        app: nginx 
-    spec: 
+      tier: frontend
+      app: nginx
+  # this is pod definition
+  template:
+    metadata:
+      # these labels belongs to pod
+      labels:
+        tier: frontend
+        app: nginx
+    spec:
       containers:
       - name: nginx
-        image: {{ .values.deployment.imageVersion }}
-        ports: 
-        - containerPort: 80
+        # this is called as placeholder
+        image: nginx:{{ .Values.deployment.imageVersion }}
