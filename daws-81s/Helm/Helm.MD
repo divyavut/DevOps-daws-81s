@@ -14,3 +14,4 @@
 #### Install helm chart 
 
 - helm install chart-name<releasename> .  ---> . represents there is Chart.yaml in current folder
+- helm upgrade chart-name . --> udpate chart with new version
