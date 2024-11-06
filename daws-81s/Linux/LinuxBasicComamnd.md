@@ -71,3 +71,6 @@ sudo hostnamectl set-hostname my-new-hostname
 - localhost is a hostname that refers to the local machine
 - It is equivalent to the IP address 127.0.0.1
 - When you use localhost, you are communicating with services that are running on your own computer.
+
+#### Where 
+- where <toolname> --> gives the install path of the tool.
