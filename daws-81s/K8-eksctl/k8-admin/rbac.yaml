@@ -1,0 +1,70 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: expense
+  name: expense-trainee
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: expense-trainee
+  namespace: expense
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: expense-trainee
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: suresh
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: Role
+# metadata:
+#   namespace: expense
+#   name: expense-admin
+# rules:
+# - apiGroups: ["*"] # "" indicates the core API group
+#   resources: ["*"]
+#   verbs: ["*"]
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: RoleBinding
+# metadata:
+#   name: expense-admin
+#   namespace: expense
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: Role
+#   name: expense-admin
+# subjects:
+# - apiGroup: rbac.authorization.k8s.io
+#   kind: User
+#   name: ramesh
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRole
+# metadata:
+#   name: expense
+# rules:
+# - apiGroups: [""]
+#   resources: ["nodes","persistentvolumes","namespaces"]
+#   verbs: ["get","list","watch"]
+# ---
+# apiVersion: rbac.authorization.k8s.io/v1
+# # This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
+# kind: ClusterRoleBinding
+# metadata:
+#   name: expense
+# subjects:
+# - kind: User
+#   name: ramesh # Name is case sensitive
+#   apiGroup: rbac.authorization.k8s.io
+# roleRef:
+#   kind: ClusterRole
+#   name: expense
+#   apiGroup: rbac.authorization.k8s.io
