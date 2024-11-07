@@ -90,3 +90,11 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
               ab -n 100 -c 10 https://www.apache.org/        
 
   - ab --help
+
+#### Helm charts 
+- helm charts is a package manager for kubernetes applications
+- to templatise manifest files
+- to install popular applications in kubernetes like ingress control, CSI drivers, metrics server, prometheus/grafana
+- image creation ---> Docker File
+- how to run image ---> docker compose/ kubernetes manifest files
+- popular tools have opensource images and open sources manifest files 

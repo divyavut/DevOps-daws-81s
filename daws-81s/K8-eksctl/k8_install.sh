@@ -4,6 +4,7 @@
 R="\e[31m"
 N="\e[0m"
 
+# docker installation
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo
 sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
@@ -35,6 +36,16 @@ sudo mv /tmp/eksctl /usr/local/bin
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
+# Helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+VALIDATE $? "helm installation" 
+
+# K9s
+curl -sS https://webinstall.dev/k9s | bash 
+VALIDATE $? "k9s installation"
+
 ## Configure Aws credentials
 
 # Prompt the user for AWS configuration details
@@ -56,4 +67,6 @@ aws configure set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
 aws configure set default.region "$AWS_REGION"
 aws configure set output "$AWS_OUTPUT_FORMAT"
 
-echo "AWS CLI configured successfully!"
+echo "AWS CLI configured successfully!" 
+
+
