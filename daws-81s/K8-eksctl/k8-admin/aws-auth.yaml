@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::315069654700:role/eksctl-expense-nodegroup-expense-NodeInstanceRole-s5iLLwbCscFS
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - expense-trainee
+      userarn: arn:aws:iam::461997657539:user/Suresh
+      username: suresh
+    - groups:
+      - expense-admin
+      userarn: arn:aws:iam::315069654700:user/ramesh
+      username: ramesh
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-06T02:05:11Z"
+  name: aws-auth
+  namespace: kube-system
+  uid: 7c41c4b2-f380-4fe0-91b7-6035fd37f2d
