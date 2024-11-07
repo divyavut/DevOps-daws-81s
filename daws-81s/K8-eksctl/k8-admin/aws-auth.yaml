@@ -10,7 +10,7 @@ data:
     - groups:
       - expense-trainee
       userarn: arn:aws:iam::461997657539:user/Suresh
-      username: suresh
+      username: Suresh
     - groups:
       - expense-admin
       userarn: arn:aws:iam::315069654700:user/ramesh
