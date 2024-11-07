@@ -13,7 +13,7 @@ data:
       username: Suresh
     - groups:
       - expense-admin
-      userarn: arn:aws:iam::315069654700:user/ramesh
+      userarn: arn:aws:iam::461997657539:user/ramesh
       username: ramesh
 kind: ConfigMap
 metadata:
