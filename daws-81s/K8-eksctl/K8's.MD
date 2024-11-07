@@ -15,6 +15,9 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
  
     eksctl create cluster --config-file=name_yaml_file 
     eksctl delete cluster --config-file=
+
+    aws eks update-kubeconfig --region us-east-1 --name  expense
+
 #### Pod
 - Pod is the smallest object in k8s.
 - pod have multiple containers sharing same IPs address.
