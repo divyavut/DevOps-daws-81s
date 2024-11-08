@@ -36,13 +36,13 @@ metadata:
 spec:
   affinity:
     podAntiAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
+      requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: purpose1
+          - key: purpose
             operator: In
             values: 
-            - affinity1
+            - affinity
         topologyKey: topology.kubernetes.io/zone
   containers:
   - name: nginx
