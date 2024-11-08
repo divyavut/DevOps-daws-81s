@@ -1,4 +1,5 @@
 # Taint the node :  kubectl taint nodes <node_name>  hardware=gpu:NoSchedule 
+# Toleartion on pod, node affinity on pod
 apiVersion: v1
 kind: Pod
 metadata:
