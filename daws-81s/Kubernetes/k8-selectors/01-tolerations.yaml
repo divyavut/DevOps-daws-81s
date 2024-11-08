@@ -6,8 +6,8 @@ spec:
   containers:
   - name: nginx
     image: nginx:stable-perl
-  # nodeSelector:
-  #   hardware: gpu
+    nodeSelector:
+      hardware: gpu
   tolerations:
   - key: "hardware"
     operator: "Equal"

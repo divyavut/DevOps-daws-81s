@@ -6,5 +6,5 @@ Taint the node
 ```
 kubectl taint nodes <node_name> key1=value1:NoSchedule
 
-Example: kubectl taint nodes  ip-192-168-20-125.ec2.internal   hardware=gpu:NoSchedule 
+Example: kubectl taint nodes ip-192-168-20-125.ec2.internal hardware=gpu:NoSchedule 
 ```
