@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+  labels:
+    purpose: affinity
+spec:
+  containers:
+  - name: nginx
+    image: nginx:stable-perl
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-2
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: purpose
+            operator: In
+            values:
+            - affinity
+        topologyKey: topology.kubernetes.io/zone
+  containers:
+  - name: nginx
+    image: nginx:stable-perl
+--- 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-3
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: purpose
+            operator: In
+            values:
+            - affinity
+        topologyKey: topology.kubernetes.io/zone
