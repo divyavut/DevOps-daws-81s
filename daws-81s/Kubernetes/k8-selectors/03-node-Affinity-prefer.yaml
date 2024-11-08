@@ -5,6 +5,7 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
+    # softrule : place the pod on node if matches
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:

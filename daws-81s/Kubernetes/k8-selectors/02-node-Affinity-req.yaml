@@ -7,6 +7,7 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
+    # hardrule : place the pod on node if matches
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
