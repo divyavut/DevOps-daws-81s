@@ -41,6 +41,9 @@ spec:
           matchExpressions:
           - key: purpose
             operator: In
-            values:
+            values: 
             - affinity
         topologyKey: topology.kubernetes.io/zone
+   containers:
+    - name: nginx
+      image: nginx:stable-perl
