@@ -44,6 +44,6 @@ spec:
             values: 
             - affinity
         topologyKey: topology.kubernetes.io/zone
-   containers:
-    - name: nginx
-      image: nginx:stable-perl
+  containers:
+  - name: nginx
+    image: nginx:stable-perl
