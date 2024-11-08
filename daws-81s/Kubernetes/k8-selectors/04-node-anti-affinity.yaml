@@ -6,7 +6,7 @@ metadata:
   name: nginx
 spec:
   affinity:
-    nodeAffinity:
+    nodeAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
