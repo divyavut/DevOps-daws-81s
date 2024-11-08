@@ -11,7 +11,7 @@
         $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
         $ chmod 700 get_helm.sh
         $ ./get_helm.sh
-#### Install helm chart 
+#### create Helm CHart and Install helm chart 
 
 - helm install chart-name<releasename> .  ---> . represents there is Chart.yaml in current folder
 - helm upgrade chart-name . --> udpate chart with new version

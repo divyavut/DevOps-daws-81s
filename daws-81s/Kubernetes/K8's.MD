@@ -38,7 +38,7 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 ### Satatefull set 
 - For stateful application(database)
 - for every pod, one ebs volume should be mapped
-- pods is created in order, runs one after one, even deleteion follows same pattern
+- pods is created in order, runs one after one, even deleteion follows the same pattern
 
 #### Deamon sets
 - Dynamicallay runs only one pod one node
@@ -69,6 +69,17 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 6. create pvc 
 7. pods can claim pvc
 
+#### kubernetes Api-resources 
+- we have namespace level resources - PVC(persistent volume)
+- we have cluster level reosurces - PV(persistent volume)
+#### RBAC
+- Role and RoleBinding is for giving namespace level autorisation access for users in kuberenetes
+- ClusterRole and ClusterRoleBinding is for giving cluster level authorisation access for users in kubernetes
+
+#### Steps to work on RBAC
+- Make user user exit and have describeCLuster access.
+- create role and rolebinding
+- edit aws-auth configmap
 
 ### Vertical and horitozal scaling(HPA)
 - You have to install metrics server (kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml)
