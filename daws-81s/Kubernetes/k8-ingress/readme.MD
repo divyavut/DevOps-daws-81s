@@ -1,4 +1,9 @@
-# Ingress Controller
+#### Ingress Controller
+- To give internet access for the application running in the kubernetes we provision ingress controller, we are using ALB as our ingress Controller. we installed Load Balancer Ingress Controller using Helm chart and have given granular permissions.
+
+we create Ingress resource for the application that requires external access, so that end user can access this application by hitting to the Ingress controller.
+
+#### Ingress Controller
 
 - Ingress controller is outside application its not a part of aws,so controller need access for ALB loadbalancer(create and manage ALB).
 - Service account acts as an identity for pods or applications running in Kubernetes.

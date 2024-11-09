@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: app1
+  labels: 
+    name: app1 
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: app1
+  template: 
+    metadata: 
+      labels: 
+        name: app1 
+    spec: 
+      containers:
+      - name: app1
+        image: divyavutakanti/app1:v1
+        ports: 
+        - containerPort: 80
+--- 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: app1
+spec: 
+  selector: 
+    name: app1
+  type: ClusterIP
+  ports: 
+  - port: 80 
+    targetPort: 80
+--- 
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: echoserver
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:315069654700:certificate/eefec79d-8012-4e7e-a530-baf154b833f2
+      # alb.ingress.kubernetes.io/listen-ports: '[ {"HTTPS": 443}]'
+      alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
+      alb.ingress.kubernetes.io/group.name: expense
+spec:
+    rules:
+    - host: "app1.dev.divyavutakanti.com"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: app1
+              port:
+                number: 80
