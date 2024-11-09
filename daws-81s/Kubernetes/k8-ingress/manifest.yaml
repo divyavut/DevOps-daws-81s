@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: app1
+  labels: 
+    name: app1 
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: app1
+  template: 
+    metadata: 
+      labels: 
+        name: app1 
+    spec: 
+      containers:
+      - name: app1
+        image: divyavutakanti/app1:v1
+        ports: 
+        - containerPort: 80
+--- 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: app1
+spec: 
+  selector: 
+    name: app1
+  type: ClusterIP
+  ports: 
+  - port: 80 
+    targetPort: 80
