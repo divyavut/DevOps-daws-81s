@@ -85,6 +85,19 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 - You have to install metrics server (kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml)
 - we have to mention resources requests and limits for the pod
 - we will attach HPA to the Deployment
+
+#### Ingress Controller 
+- Classic LoadBalancer : By Default kubernetes creates a classsic load balancer when we give service type as LoadBalancer
+   - it is not intelligent
+   - it can't route traffic to different target groups
+- ALB 
+   - it is intelligent
+   - it routes traffic to different targets groups based on listener rules
+   - it has host based routing, context path based
+- Ingress Controller 
+  - To give internet access to our application running in k8, we have to provision the Ingress controller
+  - we have to deploy Ingress rersource 
+  - https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/
 #### Install kubens
 
     sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
