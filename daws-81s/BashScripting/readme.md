@@ -100,7 +100,7 @@ CRUD
 
 #### Client Side Error (4\*\*)
 
-- 401 ---> BAD Request
+- 401 ---> BAD Request 
 - 402 ---> unauthorised (user require authentication(permission))
 - 403 ---> Forbidden (user has autentication but dont have resource authorisation)
 - 404 ---> Not found(server says unable to understand the request url send by client)
@@ -112,11 +112,9 @@ If you get 404 error --> its means cilent is unable to connect to backend.
 
 #### Server side Error (5\*\*)
 
-500- internal server error
-502- Bad Gateway
-503- Service Unavailable
-
--
+500- internal server error (server where the application is running has some configuration issues, means service/application is not running beacuse of configuration/code issues)
+502- Bad Gateway (The server which acts as reverse proxy/gateway(loadbalancer) recevie invalid error from the upstream server(service in kubernetes))
+503- 503 Service Temporarily Unavailable
 
 #### set -e
 
