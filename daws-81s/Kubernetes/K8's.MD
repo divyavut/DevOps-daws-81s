@@ -129,5 +129,5 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 
 #### Sercice account
 - service account is identity for pods(non human) = authentication.
-- service account + polices = authentication + authorisation.
+- service account + polices(RBAC) = authentication + authorisation.
 - used to connect and get acess for specfic resources in aws.
