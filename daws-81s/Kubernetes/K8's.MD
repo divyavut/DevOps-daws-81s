@@ -41,6 +41,7 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 - pods is created in order, runs one after one, even deleteion follows the same pattern
 
 #### Deamon sets
+- if we run daemon set on cluster, kubernetes ensure that pod runs on each node.
 - Dynamicallay runs only one pod one node
 - used for monitoring workloads (prometheus)
 #### PV and PVC
@@ -125,3 +126,8 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 - image creation ---> Docker File
 - how to run image ---> docker compose/ kubernetes manifest files
 - popular tools have opensource images and open sources manifest files 
+
+#### Sercice account
+- service account is identity for pods(non human) = authentication.
+- service account + polices = authentication + authorisation.
+- used to connect and get acess for specfic resources in aws.
