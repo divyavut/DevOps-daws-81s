@@ -130,4 +130,29 @@ spot instances --> 90% discount. when AWS requires capacity to ondemand clients 
 #### Sercice account
 - service account is identity for pods(non human) = authentication.
 - service account + polices(RBAC) = authentication + authorisation.
-- used to connect and get acess for specfic resources in aws.
+- used to connect and get acess for specfic resources in aws. 
+
+### Kubernete architecture
+
+#### Master
+
+- API server : it acts as front end to the control panel(master), receives the request from client and checks authentication and authorisation it.
+- Scheduler --> Schedules the pods on worker nodes based on resources availability, it checks taints, tolerations, node selectors, affinity, anti affinity, hardware requirements, free CPU and memory.
+- Controller : 
+   - ReplicaSet : it ensures desired number of pods running on the worker nodes.
+   - node contoller: keep on monitoring the nodes
+   - job controller: checks the jobs
+   - Endpoint controller: estabilish connections between services and pods
+   - SA controller: creates default service account in namespace
+- ectd : Database for k8 configuration.
+
+#### Node Components
+- kubelet: An agent running inside worker node to communicate with master
+- kube proxy: setup the network rules communication of pods and nodes
+- container runtime : to run the containers
+   - contianer-d, crio. 
+
+#### add-ons 
+- VPC CNI 
+- DNS
+- Kube proxy
